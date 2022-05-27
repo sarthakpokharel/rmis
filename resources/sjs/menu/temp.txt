@@ -1,0 +1,24 @@
+<!--#include file="js/menu/style_qm.asp"--> 
+
+
+<tr>
+            <td colspan="2">
+			<div id="qm0" class="qmmc" style="width:100%">
+	<a href=#>Main Menu</a>
+	<div class="qmmc">
+		<a href="javascript:navigates('accountinfo_income.asp','scrollcontent')">Income Record</a>
+		<div>
+			<a href="#">Menu1</a>
+		</div>
+		<a href="javascript:navigates('accountinfo_status.asp','scrollcontent')">Account Status</a>
+		<a href="#">Show Cheque</a>
+		
+		</div>
+<span class="qmclear">&nbsp;</span>
+</div>
+ <script type="text/JavaScript">qm_create(0,false,0,500,true)</script>
+			</td>
+          </tr>
+          <tr>
+            <td colspan="2">&nbsp;</td>
+          </tr>

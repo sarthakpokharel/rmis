@@ -1,0 +1,227 @@
+<div class="easyui-layout bod" style="width:auto; margin-left:20px; background-color:'#e1edf2';width: calc(100vw);">
+
+    <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'"
+        style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
+        <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
+            <form>
+                <input class="easyui-textbox" name="संकेत" style="width:25%"
+                    data-options="label:'संकेत',required:false">
+                &nbsp;
+                <input class="easyui-textbox" name="नाम" style="width:25%" data-options="label:'नाम',required:false">
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <a class="easyui-linkbutton l-btn l-btn-small" id="btnsave" name="btnsave"
+                    href="javascript:submit_frmsourcelevel();" group=""><span class="l-btn-left"><span
+                            class="l-btn-text">Search</span></span></a>
+
+            </form>
+
+        </div>
+        <table id="tt" class="easyui-datagrid" data-options="singleSelect:true,collapsible:true,"
+            url="http://localhost:8020/rmis/landtype/list-data" pageList="[2,5,10,20]" method='get' title="Load Data"
+            iconCls="icon-save" rownumbers="true" pagination="true">
+            <thead>
+                <tr>
+                    <th field="id" width="80">ID</th>
+                    <th field="landTypeNameNp" width="120">Land Type Name[NP]</th>
+                    <th field="landTypeNameEn" width="80" align="right">Land Type Name[EN]</th>
+                    <th field="edit" formatter="editDetail" width="80">Action</th>
+                </tr>
+            </thead>
+        </table>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">गा. वि. स. (साविक)</th>
+                    <th scope="col">वोडा (साविक)</th>
+                    <th scope="col">हालको वोडा न.</th>
+                    <th scope="col">क्षेत्रफल रोपनीमा</th>
+                    <th scope="col">जग्गा धनीको हक हिस्स</th>
+                    <th scope="col">जग्गाको चलन चल्तीको मूल्य (प्रति रोपानी)</th>
+                    <th scope="col">जग्गाको चजोडिएको मुख्य सडक</th>
+                    <th scope="col">कैफ्यत</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help'"
+        style="width:calc(9.84vw); background-color: rgb(236, 242, 249);"></div>
+    <div data-options="region:'center',title:'ससम्पतिको विवरण',iconCls:'icon-save'"
+        style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
+        <div style="margin: 15px;">
+
+            <form id="landTypeFrm" method="post">
+                <fieldset class="p-2" style="border: 1.5px solid #b5b8c8 !important">
+                    <legend class="float-none w-auto p-2" style="font: bold 11px tahoma, arial, helvetica, sans-serif">
+                        जग्गाको विरारण</legend>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Select User <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <select class="form-select form-select-sm" aria-label="Default select example">
+                                <option value="1" selected>Ram</option>
+                                <option value="0">Shyam</option>
+                                <option value="0">Hari</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">गा. वि. स. (साविक)<span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">वोडा (साविक)<span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">हालको वोडा न.<span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <br>
+
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">क्षेत्रफल रोपनीमा<span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">जग्गा धनीको हक हिस्स</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control form-control-sm">
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">जग्गाको प्रयोग</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control form-control-sm">
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">जग्गाको चलन चल्तीको मूल्य (प्रति रोपानी)</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control form-control-sm">
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">जग्गाको चजोडिएको मुख्य सडक</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control form-control-sm">
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">कैफ्यत</label>
+                        </div>
+                        <div class="col-md-9">
+                            <textarea class="form-control" rows="2"></textarea>
+                        </div>
+
+                    </div>
+                    <br>
+                    <!-- <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Approved <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <select class="form-select form-select-sm" aria-label="Default select example">
+                                <option value="1" selected>Yes</option>
+                                <option value="0">No</option>
+                              </select>
+                        </div>
+                    </div>
+                    <br> -->
+
+                    <!-- <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Disabled <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <select class="form-select form-select-sm" aria-label="Default select example">
+                                <option value="1" selected>Yes</option>
+                                <option value="0">No</option>
+                              </select>
+                        </div>
+                    </div>
+                    <br> -->
+
+
+
+
+
+                    <div style="text-align:center;padding:5px 0">
+                        <a href="javascript:void(0)" class="easyui-linkbutton" id="submitMForm"
+                            (click)="submitForm('landTypeFrm')" style="width:80px">Submit</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="javascript:void(0)" class="easyui-linkbutton" (click)="clearForm('landTypeFrm')"
+                            style="width:80px">Clear</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

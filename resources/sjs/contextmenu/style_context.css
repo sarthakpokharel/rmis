@@ -1,0 +1,49 @@
+.rcMenuContainer {
+    background-image:url(images/bg_g.gif);
+		/*padding:2px 0px 2px 15px;*/
+		border-width:2px;
+		border-style:solid;
+		border-color:#F8FDF5;
+		margin:0px 5px 0px 5px;
+		position:absolute;
+		border-bottom-color:#666666;
+		border-right-color:#666666;
+		border-top-color:#FFFFFF;
+		border-left-color:#FFFFFF
+}
+
+.rcMenuItem {
+    font-size:14px;
+	background-image:url(images/head_bgex.gif);
+    font-weight:normal;
+    padding:3px;
+    width:100%;
+	color:#000000;
+}
+.rcMenuItemHover {
+  	 font-size:14px;
+	background-image:url(images/boxtop.gif);
+    font-weight:normal;
+    padding:3px;
+    width:100%;
+	
+    
+}
+ 
+.rcMenuItemTextExt {
+    font-size:11px;
+	color:#000000;
+    font-weight:normal;
+    border:1px dotted grey;
+    padding:2px;
+} 
+
+.rcMenuSeparator{
+    color:#663300;
+    height:2px;
+}
+.rcImage {
+	padding-right:4px; 
+}
+.rcRightContextTable{
+width:100$;}

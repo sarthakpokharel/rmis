@@ -1,0 +1,571 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 16, 2017, 2:45:30 PM
+    Author     : user
+*/
+#menu .fmis-panel{
+	
+	overflow:visible;
+	}
+.fmis-panel{
+    margin-bottom: 0px;
+}
+@font-face{
+
+}
+
+a:focus, a:hover{
+    text-decoration: none !important;
+}
+
+ul li{
+    list-style-type:none;
+    text-decoration: none;
+
+}
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+    /*    border-left: 1px solid rgba(255, 255, 255, 0.0976562);
+        border-right: 1px solid rgba(0, 0, 0, 0.16);*/
+    /*    line-height: 452;*/
+}
+.nav-tabs>li{
+    float: left;
+    margin-bottom: -2px;
+    /*    border-left: 1px solid rgba(255, 255, 255, 0.0976562);
+        border-right: 1px solid rgba(0, 0, 0, 0.16);*/
+    height: 24px;
+    padding: 0px 0px 0px 3px;
+}
+.nav-tabs>li:hover{
+    padding: 0px 0px 0px 3px;
+}
+.nav-tabs>li a:hover {
+    border-color: #bfdbff #bfdbff #bfdbff;
+
+}
+.nav-tabs>li:first-child {
+    float: left;
+    margin-bottom: -1px;
+    border-left: none;
+    /*    border-right: 1px solid rgba(0, 0, 0, 0.16);*/
+    /*    line-height: 452;*/
+
+}
+.nav-tabs>li:last-child {
+    border-right: none;
+
+    min-height: 25px;
+}
+.tab-content ul li a:active {
+    border-left: none;
+    border-right: none;
+	background: linear-gradient(to bottom, rgba(254,252,234,1) 0%,#ffdd66 100%);
+
+}
+.active-menu-ribbon{
+	background: linear-gradient(to bottom, rgba(254,252,234,1) 0%,#ffdd66 100%);
+	border-radius: 5px;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.active{
+    background-image: url(../images/tab_left.gif);
+    padding: 0 0 0 4px;
+}
+.tab-content ul li a:focus{
+
+    text-decoration: none;
+    padding: 2px 5px;
+
+
+}
+ul li a{
+    text-decoration: none;
+}
+ul li a:hover{
+    text-decoration: none;
+    /*    color: white;*/
+    border-radius: 5px;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 2px 10px;
+}
+.fmis-panel.with-nav-tabs .panel-heading{
+    padding: 0px 5px 0 0px;
+}
+.fmis-panel.with-nav-tabs .nav-tabs{
+    border-bottom: none;
+}
+.fmis-panel.with-nav-tabs .nav-justified{
+    margin-bottom: -1px;
+}
+.dropdown-menu li:hover{
+    background-color: #bfdbff;
+    background: #bfdbff;
+}
+.submenu-inner-container ul li a:hover{
+    /*    background: transparent url(../images/button_over.png) no-repeat scroll left top;*/
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
+    background: rgb(254,252,234); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(254,252,234,1) 0%, #ffdd66 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(254,252,234,1) 0%,#ffdd66 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(254,252,234,1) 0%,#ffdd66 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
+    border-radius: 5px;
+    /*    color: #fff ;*/
+}
+.menu-ribbon .panel-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    background: #BFDBFF url(../images/bg.png) repeat-x scroll center top;
+    height: 91px;
+    /* overflow-x: scroll;
+     overflow-y: hidden;*/
+	overflow:hidden;
+
+
+}
+.scroll-width{
+    margin-left: 20px;
+	margin-right: 20px;
+    padding-right: 5px;
+}
+.panel-heading>ul>li:hover{
+    background: transparent url(../images/tab_left_over.gif) no-repeat scroll left top;
+    color: #15428B;
+}
+.panel-heading>ul>li a:hover{
+    background: transparent url(../images/tab_right_over.gif) no-repeat scroll right top;
+    color: #15428B;
+}
+.width{
+    width: 49px;
+}
+.single1{
+    margin-left: 5px;
+}/*
+.single{
+    
+    width: 49px;
+    height: 66px;
+}
+.text-list:hover{
+    background: transparent url(../images/button3_over.png) no-repeat scroll top right !important;
+}
+.text-list li a:hover{
+  background: transparent url(../images/button3_over.png) no-repeat; 
+}
+.submenu-inner-container .width{
+    text-align: center;
+}*/
+/********************************************************************/
+/*** PANEL DEFAULT ***/
+.with-nav-tabs.panel-default .nav-tabs > li > a,
+.with-nav-tabs.panel-default .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li > a:focus {
+
+}
+.with-nav-tabs.panel-default .nav-tabs > .open > a,
+.with-nav-tabs.panel-default .nav-tabs > .open > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > .open > a:focus,
+.with-nav-tabs.panel-default .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li > a:focus {
+
+
+
+}
+.with-nav-tabs.panel-default .nav-tabs > li.active > a,
+.with-nav-tabs.panel-default .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.active > a:focus {
+    color: #555;
+    background: transparent url(../images/tab_right.gif) no-repeat scroll right top;
+    border-color: #bfdbff;
+    border-bottom-color: transparent;
+    padding-bottom: 5px;
+    border-left: none;
+    border-bottom: snow;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu {
+    /*    background-color: rgb(229, 240, 254);
+        border-color: #ddd;*/
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a {
+    color: #15428b;  
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li {
+   /*padding:15px 40px 15px 20px;*/
+	padding: 3px 30px 4px 10px;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li:focus, .with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li.active {
+    color: #15428b;
+    background: linear-gradient(to bottom, rgba(254,252,234,1) 0%,#ffdd66 100%);
+	
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+    color: #15428b;
+    background: none;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+
+    background-color: unset;
+}
+/********************************************************************/
+/*** PANEL PRIMARY ***/
+.with-nav-tabs.panel-primary .nav-tabs > li > a,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+    color: #fff;
+}
+.with-nav-tabs.panel-primary .nav-tabs > .open > a,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:focus,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+    color: #fff;
+    background-color: #3071a9;
+    border-color: transparent;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:focus {
+    color: #428bca;
+    background-color: #fff;
+    border-color: #428bca;
+
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu {
+    background-color: #428bca;
+    border-color: #3071a9;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a {
+    color: #fff;   
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+    background-color: #3071a9;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+    background-color: #4a9fe9;
+}
+.panel-default>.panel-heading{
+    background-image: none !important;
+    background: #BFDBFF url(../images/bg_tab.png) repeat-x scroll center bottom;
+}
+.nav-tabs>li>a{
+    border-radius:0px ;
+    margin-right: 0px;
+    line-height: 1.3;
+}
+.bottom-text{
+    text-align: center;
+    margin-top: -10px;
+
+}
+.submenu-container{
+    background: transparent url(../images/panel_right.gif) no-repeat scroll right top;
+    display: block;
+    float: none;
+    /*    padding: 71px 12px 5px 6px;*/
+    text-decoration: none;
+    color: #15428B;
+
+    padding: 0px 0px 12px 0px;
+
+
+
+}
+.inset{
+    height: auto;
+    width: auto;
+    min-width: 100px;
+    min-height: 15px;
+    background: transparent url(../images/panel_left.gif) no-repeat scroll left top;
+    float: left;
+    margin: 0 0 0 2px;
+    padding: 0 0 0 5px;
+}
+
+a {
+    color: #15428b;
+    text-decoration: none;
+}
+.submenu-container ul li a{
+    text-decoration: none;
+    padding: 1px 5px;
+    display: block;
+    /*    border-radius: 50%;*/
+}
+.submenu-inner-container{
+
+    height: auto;
+    min-width: 75px;
+    min-height: 80px;
+    width: auto;
+    padding: 5px 5px;
+
+}
+.submenu-container:hover{
+
+
+
+
+
+}
+.menu-ribbon{
+    padding-left: 0px;
+	z-index: 1030;
+    /* position: static; */
+    position: relative;
+}
+.submenu-container .col-sm-12{
+    padding: 0px;
+}
+
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover{
+    background-color: none;
+    
+    color: #15428b;
+}
+
+.custom-drop{
+    text-align: left;
+    position: absolute;
+    left: 100%;
+    width:100%;
+    /* top: -8%; */
+    margin-top: -57px;
+    margin-left: 2px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    padding-left: 0px;
+    background: #ccdbee url(../images/panel_right.gif) no-repeat scroll right top;
+	    background-size: 100% 0%;
+    /* display: block; */
+    
+    color: #15428B;
+}
+.custom-drop li{
+
+	padding: 3px 15px 9px 0px;
+	/*padding:15px 15px 15px 0px;;*/
+    min-width: 100px;
+    width: 100%;
+}
+.custom-drop li a{
+
+    padding: 4px 10px;
+    display: block;
+
+}
+.custom-drop li:hover{
+    background: linear-gradient(to bottom, rgba(254,252,234,1) 0%,#ffdd66 100%) !important;
+    border-radius: 0px !important;
+}
+.custom-drop li a:hover{
+    background: none !important;
+    border-radius: 0px !important;
+}
+.dropdown-menu{
+    background: #ccdbee url(../images/panel_right.gif) no-repeat scroll right top;
+    /*    display: block;*/
+    float: none;
+    /*    padding: 71px 12px 5px 6px;*/
+    text-decoration: none;
+    color: #15428B;    
+    padding: 0px 0px 0px 0px;
+    min-width: 150px;
+        background-size: 100% 0%;
+		z-index:1031;
+}
+.dropdown-menu.header-sub-menu{
+	border: 3px solid rgb(35, 98, 134);
+	background: #fff;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+    background: #e4edf9;
+    border-color: rgba(191, 219, 255, 0.8);
+    border-radius: 5px;
+}
+/*slick*/
+.slick-prev:before, .slick-next:before{
+    color: #00008b;
+}
+.slick-next {
+    right: -14px;
+}
+.slick-prev {
+    left: -20px;
+}
+.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before {
+    opacity: 1;
+    color: rgba(255, 221, 102, 0.78);
+}
+
+/*////*/
+.dropdown-menu>li>a {
+    display: block;
+        padding: 1px 10px 1px 0px;
+}
+/*icon for menu*/
+
+.dropdown-menu.mods .fa{
+	margin-right:15px;
+}
+
+
+.mods.custom-drop li a{
+	margin-left:52px;
+	margin-top: -35px;
+}
+.mods.dropdown-menu li:before{
+	position:relative;
+	font-size:30px;
+	top:3px;
+	    
+}
+.custom-drop li:before{
+	position: relative;
+    font-size: 30px;
+    top: 0px;
+    left: 15px;
+}
+/*
+.mods.dropdown-menu li:nth-child(2) a{
+	margin-left:27px;
+	margin-top: -28px;
+}
+.mods.custom-drop li:nth-child(2) a{
+	margin-left:52px;
+	margin-top: -30px;
+}
+.mods.custom-drop li:nth-child(1) a{
+	margin-left:49px;
+	margin-top: -32px;
+}
+.mods.dropdown-menu li a{
+	margin-left:30px;
+	margin-top: -25px;
+}
+.mods.dropdown-menu li:nth-child(1):before{
+	font-family: 'Glyphicons Halflings';    
+	content: "\e019";
+}
+.mods.dropdown-menu li:nth-child(2):before{
+	font-family: 'Glyphicons Halflings';    
+	content: "\e019";
+}
+.mods.dropdown-menu li:nth-child(3):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e139";
+	
+}
+.mods.dropdown-menu li:nth-child(4):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e067";
+	
+}
+.mods.dropdown-menu li:nth-child(5):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e047";
+	
+}
+.mods.dropdown-menu li:nth-child(6):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e057";
+	
+}
+
+.mods.dropdown-menu li:nth-child(7):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e077";
+	
+}
+
+.mods.dropdown-menu li:nth-child(8):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e087";
+	
+}
+
+.mods.dropdown-menu li:nth-child(9):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e097";
+	
+} 
+
+.custom-drop li:nth-child(1):before{
+	font-family: 'Glyphicons Halflings';
+        content: "\e080";
+}
+.custom-drop li:nth-child(2):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e067";
+	
+}
+
+.custom-drop li:nth-child(3):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e070";
+	
+}
+.custom-drop li:nth-child(4):before{
+	font-family: 'Glyphicons Halflings';
+    content: "\e080";
+	
+}
+.mods.dropdown-menu .custom-drop li a {
+    margin-left: 47px;
+margin-top: -30px;
+}
+*/
+
+
+
+
+.dropdown-menu, .custom-drop {
+      
+   
+    border: 5px solid rgba(0,0,0,.15);
+   
+}
+.dropdown .dropdown-menu .caret {
+        border: 10px solid transparent;
+    border-left-color: #15428b;
+   
+   float: none; 
+    margin-top: 0px; 
+	margin-left:70px;
+}
+.dropdown-menu.header-sub-menu li{
+	padding:5px 10px;
+}
+.dropdown-menu.header-sub-menu li a{
+	color: #15428b;
+}
+.dropdown-menu.header-sub-menu li:hover,.dropdown-menu.header-sub-menu li a:hover {
+    color: #15428b;
+background: linear-gradient(to bottom,rgba(254,252,234,1) 0%,    #ffdd66 100%);
+} {
+    color: #15428b;
+background: linear-gradient(to bottom,rgba(254,252,234,1) 0%,    #ffdd66 100%);
+}
+
+
+/******/
+.slick-disabled{
+    opacity: 0;
+}

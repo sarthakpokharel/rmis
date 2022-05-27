@@ -1,0 +1,131 @@
+<div class="easyui-layout bod" style="width:auto; margin-left:20px; background-color:'#e1edf2';width: calc(100vw);">
+
+    <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'" style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
+        <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
+            <form onsubmit="doListSearch(event)">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
+                        <input class="form control form-control-sm" name="code" id="code">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
+                       <input class="form control form-control-sm" name="name" id="name">
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="easyui-linkbutton"  id="btnSearch" >Search</button>
+                    </div>
+                </div>  
+            </form>
+            
+            </div>
+            <table id="tt" class="easyui-datagrid" attr.data-options="{{gridOptions}}" attr.data-path="{{url}}">
+        <thead>
+            <tr>
+              
+                <th field="landTypeCode" width="120">Code</th>
+                <th field="landTypeNameNp" width="160">Name[NP]</th>
+                <th field="landTypeNameEn" width="160" >Name[EN]</th>
+                <th field="edit" formatter="editDetail" width="30" >Edit</th>
+                <th field="delete" formatter="deleteDetail" width="45" >Delete</th>
+            </tr>
+        </thead>
+    </table>
+    </div>
+    <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help'" style="width:calc(9.84vw); background-color: rgb(236, 242, 249);"></div>
+    <div data-options="region:'center',title:'राजस्व क्रियाकलाप',iconCls:'icon-save'" style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
+        <div style="margin: 15px;">
+
+            <form id="landTypeFrm" method="post" onsubmit="submitForm(event)" action="{{url}}/define">
+                <input type="hidden" id="landTypeId" name="landTypeId" value="" data-id="true">
+                <fieldset class="p-2" style="border: 1.5px solid #b5b8c8 !important">
+                    <legend class="float-none w-auto p-2" style="font: bold 11px tahoma, arial, helvetica, sans-serif">Revenue Collection Activity</legend>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">{{gs.wds('Revenue Heading')}}</label>
+                        </div>
+                        <div class="col-md-9">                            
+                            <select name="revenueId" id="revenueId" class="form-select form-select-sm">
+                         
+                                <option value="0" >......</option>
+
+                             <option value="11131:0">11131 | सम्पत्ती, बहाल तथा पट्टा वापतको आयमा लाग्ने कर</option><option value="11313:0">11313 | एकीकृत सम्पती कर</option><option value="11314:0">11314 | भुमिकर/मालपोत</option><option value="11321:0">11321 | घरवहाल कर</option><option value="11322:0">11322 | वहाल विटौरी कर</option><option value="11451:0">11451 | सवारी साधन कर (साना सवारी)</option><option value="11452:0">11452 | पुर्वाधार सेवाको उपयोगमा लाग्ने कर</option><option value="11479:0">11479 | अन्य मनोरञ्जन कर</option><option value="11611:0">11611 | व्यवसायले भुक्तानी गर्ने </option><option value="11621:0">11621 | व्यवसाय बाहेक अन्यले भुक्तानी गर्ने </option><option value="11631:0">11631 | कृषितथा पशुजन्य वस्तुको व्यावसायिक कारोवारमा लाग्ने कर</option><option value="11632:0">11632 | अखेटोपहारमा लाग्ने कर</option><option value="11691:0">11691 | अन्य कर</option><option value="13411:0">13411 | अन्य संस्थागत आन्तरिक अनुदान</option><option value="13412:0">13412 | अन्य व्यक्तिगत आन्तरिक अनुदान</option><option value="14111:0">14111 | वित्तीय निकायबाट प्राप्त ब्याज</option><option value="14112:0">14112 | व्यापारिक निकायबाट प्राप्त ब्याज</option><option value="14113:0">14113 | औद्यौगिक निकायबाट प्राप्त ब्याज</option><option value="14114:0">14114 | सेवामुलक निकायबाट प्राप्त ब्याज</option><option value="14119:0">14119 | अन्य निकायबाट प्राप्त ब्याज</option><option value="14121:0">14121 | वित्तीय निकायबाट प्राप्त लाभांश</option>
+                             <option value="14122:0">14122 | व्यापारिक निकायबाट प्राप्त लाभांश</option><option value="14123:0">14123 | औद्यौगिक निकायबाट प्राप्त लाभांश</option><option value="14124:0">14124 | सेवामुलक निकायबाट प्राप्त लाभांश</option><option value="14129:0">14129 | अन्य निकायबाट प्राप्त लाभांश</option><option value="14151:0">14151 | सरकारी सम्पत्तीको वहालबाट प्राप्त आय</option><option value="14159:0">14159 | अन्य स्रोतबाट प्राप्त रोयल्टी</option><option value="14191:0">14191 | पर्यटन शुल्क</option><option value="14192:0">14192 | पदयात्रा शुल्क</option><option value="14211:0">14211 | कृषि उत्पादनको बिक्रीबाट प्राप्त रकम</option><option value="14212:0">14212 | सरकारी सम्पतीको बिक्रीबाट प्राप्त रकम</option><option value="14213:0">14213 | अन्य बिक्रीबाट प्राप्त रकम</option><option value="14216:0">14216 | निजी धारा वापतको शुल्क</option><option value="14217:0">14217 | नहर तथा कुलो उपयोग वापतको शुल्क</option><option value="14218:0">14218 | विद्युत सेवा शुल्क</option><option value="14219:0">14219 | अन्य सेवा शुल्क तथा बिक्री</option><option value="14221:0">14221 | न्यायिक दस्तूर</option><option value="14223:0">14223 | शिक्षा क्षेत्रको आम्दानी</option><option value="14224:0">14224 | परीक्षा शुल्क</option><option value="14225:0">14225 | यातायात क्षेत्रको आम्दानी</option>
+                             <option value="14229:0">14229 | अन्य प्रशासनिक सेवा शुल्क</option>
+                             <option value="14241:0">14241 | पार्किङ्ग शुल्क</option><option value="14242:0">14242 | नक्सापास दस्तुर</option><option value="14243:0">14243 | सिफारिश दस्तुर</option><option value="14244:0">14244 | व्यक्तिगत घटना दर्ता दस्तुर</option><option value="14245:0">14245 | नाता प्रमाणित दस्तुर</option><option value="14249:0">14249 | अन्य दस्तुर</option><option value="14253:0">14253 | व्यावसाय रजिष्ट्रेशन दस्तुर</option><option value="14254:0">14254 | रेडियो/ एफ.एम.सञ्चालन दस्तुर</option><option value="14262:0">14262 | विद्युत सम्बन्धी दस्तुर </option>
+    <option value="14263:0">14263 | जलस्रोत सम्बन्धी अन्य दस्तुर </option><option value="14265:0">14265 | अन्य क्षेत्रको आय</option><option value="14311:0">14311 | न्यायिक दण्ड,  जरिवाना र जफत</option><option value="14312:0">14312 | प्रशासनिक दण्ड, जरिवाना र जफत</option><option value="14313:0">14313 | धरौटी सदरस्याहा</option><option value="14411:0">14411 | चालु हस्तान्तरण</option><option value="14421:0">14421 | पूँजीगत हस्तान्तरण</option><option value="14511:0">14511 | बीमा दावी प्राप्ति</option><option value="14521:0">14521 | प्रदुषण नियन्त्रण शुल्क</option><option value="14529:0">14529 | अन्य राजस्व</option><option value="14531:0">14531 | सरकारी घर, जग्गा, गुडवील बिक्रीबाट प्राप्त रकम</option><option value="14611:0">14611 | व्यवसाय कर</option>
+    <option value="15111:0">15111 | बेरूजू</option><option value="15112:0">15112 | निकासा फिर्ता</option>
+    <option value="15113:0">15113 | अनुदान फिर्ता</option><option value="32121:0">32121 | नगद</option>
+</select>
+
+                              
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Code <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="landTypeCode" id="landTypeCode" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Name[NP] <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="landTypeNameNp"  id="landTypeNameNp" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Name[EN]</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="landTypeNameEn"  id="landTypeNameEn" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">{{gs.wds('Approved')}} <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-3">
+                            <select name="approved" id="approved" class="form-select form-select-sm">
+                                <option value="1" selectd="selected">Yes</option>
+                                <option value="0">No</option>
+                              </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">{{gs.wds('Disabled')}} <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-3">
+                            <select name="disabled" id="disabled" class="form-select form-select-sm">
+                                <option value="0" selectd="selected" >No</option>
+                                <option value="1" >Yes</option>
+                              </select>
+                        </div>
+                    </div>
+                    <br>
+                <div style="text-align:center;padding:5px 0">
+                    <button type="submit" class="easyui-linkbutton" >{{gs.wds('Save')}}</button>&nbsp;&nbsp;&nbsp;
+                    <button type="reset" class="easyui-linkbutton" (click)="clearForm('landTypeFrm')" id="formClear">Clear</button>
+                </div>
+            </fieldset>
+            </form>
+          </div>
+    </div>
+</div>

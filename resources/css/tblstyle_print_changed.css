@@ -1,0 +1,212 @@
+
+            @media print {
+                thead {
+    			 display: table-header-group;
+                }
+                tbody{
+                  
+    			
+                }
+            }
+       #row_head {
+                padding:1px 1px 1px 1px;
+                width:100%;
+                font-size: 13px;
+
+            }
+            #row_head thead th{
+                border:1px solid #6d6969;
+                background:#ccc;
+				text-align:center;
+
+            }
+
+            #row_head  tbody td{
+                border: 1px solid #9E9E9E;
+                padding-left: 2px;
+                padding-right: 2px;
+                padding-top: 2px;
+                padding-bottom: 2px;
+            }
+			#row_head  tbody tr:hover{
+				background-color:#99CCFF;	
+			}
+			
+            .table-background{
+                background:#ccc;
+            }
+			#row_sum .invisible{
+			   width: 20px !important;
+				background: none !important;
+				border: none !important;
+			}
+			#row_sum .invisible-left{
+			    width: 20px !important;
+				background: none !important;
+				border: none !important;
+			}
+			#row_sum .invisible-right{
+			   width: 20px !important;
+				background: none !important;
+				border: none !important;
+			}
+			
+            #row_sum td {
+                background:#ccc !important;
+            }
+			 #row_sum th {
+                background:#ccc !important;
+				border: 1px solid #9E9E9E !important;
+				text-align:center;
+				font-size:12px;
+            }
+			
+			#td_noborder {
+			    /*width: 80px !important;
+				background: none !important;*/
+				border: none !important;
+			}
+			#td_noborder table {
+    border-collapse: collapse;
+	border-spacing: 0px !important;
+	border: 1px solid #9E9E9E !important;
+}
+#td_noborder table tbody th, #td_noborder table tbody td{
+    
+	border: 2px solid #9E9E9E !important;
+}
+#td_signer{
+border: none !important;
+}
+#td_signer th, #td_signer td{
+font-size:13px;
+}
+			
+			#row_data th{
+				border: 1px solid #9E9E9E !important;
+                padding-left: 2px;
+                padding-right: 2px;
+                padding-top: 2px;
+                padding-bottom: 2px;
+				font-size: 12px !important;
+				background:#ccc !important;
+			}
+			#row_data td{
+				border: 1px solid #9E9E9E;
+                padding-left: 2px;
+                padding-right: 2px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+				font-size: 12px !important;
+				background: none !important;
+			}
+			
+            .report-image{
+                width: 25%;
+                float: left;
+            }
+            .report-image img{
+                width:65px; 
+                height:65px;
+                border:0px;
+
+            }
+            .office-name{
+                width: 50%;
+                float: left;
+                text-align:center;
+            }
+            .office-top-name{
+                font-size: 12px;
+
+            }
+            .office-second-name{
+
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .office-third-name{
+                font-size: 16px;
+
+            }
+            .office-fourth-name{
+                font-size: 14px;
+            }
+            .top-right{
+                width: 25%;
+                text-align: right;
+                float: right;
+            }
+            .section-name{
+                font-size: 14px;
+            }
+            .subheader{
+                text-align:left;
+                padding-left:5px; 
+            }
+            .report-footer-heading{
+                text-decoration: underline;
+                font-weight:bold;
+                text-align: left;
+            }
+            .border-none td{
+                border:none;
+				
+            }
+			
+			.normalth th{
+			font-weight:normal;
+			}
+			
+			.normalth td{
+			font-weight:normal;
+			border:none !important;
+			font-size:12px !important;
+			}
+						
+			.invisible {
+			    width: 20px !important;
+				background:#FFF !important;
+				border: none !important;
+			}
+			
+			.invisible-left {
+			    width: 20px !important;
+				background:#FFF !important;
+				border: none !important;
+			}
+			.invisible-right {
+			    width: 20px !important;
+				background: none !important;
+				border: none !important;
+			}
+			.invisible:hover {
+			    width: 20px !important;
+				background: none !important;
+				border: none !important;
+			}
+			
+		
+	tr.border_bottom  td {   
+		border-bottom:1pt solid black !important;
+	}
+	tr.border_bottom:hover  td {   
+	background-color:#99CCFF;
+	}
+	
+	
+	
+	div.absolute {
+  position: absolute;
+  top: 20px;
+  right: 160px;
+  width: 70px;
+  height: 70px;
+  
+}
+div.absolute img{
+	width: 70px;
+  height: 70px;
+}
+			
+      

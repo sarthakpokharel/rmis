@@ -1,0 +1,23 @@
+.submenu-inner-container ul li a.active {
+	background: linear-gradient(to bottom, rgba(254, 252, 234, 1) 0%,
+		#ffdd66 100%);
+}
+
+.y1 {
+	color: black;
+	background-color: #ffdd66;
+}
+
+#notfound {
+	position: relative;
+	height: 100vh;
+}
+
+#notfound .notfound {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}

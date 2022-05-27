@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+.mic {
+    width: 16px;
+    height: 16px;
+}
+.single1 .mic {
+
+    width: 32px;
+    height: 32px;
+}
+
+.submenu-inner-container {
+    display: flex !important;
+}
+
+.custom-drop {
+
+    margin-top: -36px !important;
+}
+
+.hide{
+    display: none !important;
+}
+
+.show {
+    display: inline !important;
+  }

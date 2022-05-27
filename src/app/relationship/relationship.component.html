@@ -1,0 +1,108 @@
+<div class="easyui-layout bod" style="width:auto; margin-left:20px; background-color:'#e1edf2';width: calc(100vw);">
+
+    <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'" style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
+        <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
+            <form onsubmit="doListSearch(event)">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
+                        <input class="form control form-control-sm" name="code" id="code">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
+                       <input class="form control form-control-sm" name="name" id="name">
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="easyui-linkbutton"  id="btnSearch" >Search</button>
+                    </div>
+                </div>  
+            </form>
+            
+            </div>
+            <table id="tt" class="easyui-datagrid" attr.data-options="{{gridOptions}}" attr.data-path="{{url}}">
+        <thead>
+            <tr>
+              
+                <th field="relationshipCode" width="120">Code</th>
+                <th field="relationshipNameNp" width="160">Name[NP]</th>
+                <th field="relationshipNameEn" width="160" >Name[EN]</th>
+                <th field="edit" formatter="editDetail" width="30" >Edit</th>
+                <th field="delete" formatter="deleteDetail" width="45" >Delete</th>
+            </tr>
+        </thead>
+    </table>
+    </div>
+    <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help'" style="width:calc(9.84vw); background-color: rgb(236, 242, 249);"></div>
+    <div data-options="region:'center',title:'नाता',iconCls:'icon-save'" style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
+        <div style="margin: 15px;">
+
+            <form id="relationshipFrm" method="post" onsubmit="submitForm(event)" action="{{url}}/define">
+                <input type="hidden" id="relationshipId" name="relationshipId" value="" data-id="true">
+                <fieldset class="p-2" style="border: 1.5px solid #b5b8c8 !important">
+                    <legend class="float-none w-auto p-2" style="font: bold 11px tahoma, arial, helvetica, sans-serif">relationship</legend>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Code <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="relationshipCode" id="relationshipCode" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Name[NP] <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="relationshipNameNp"  id="relationshipNameNp" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Name[EN]</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="relationshipNameEn"  id="relationshipNameEn" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Approved <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-3">
+                            <select name="approved" id="approved" class="form-select form-select-sm">
+                                <option value="1" selectd="selected">Yes</option>
+                                <option value="0">No</option>
+                              </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Disabled <span class="red-required">*</span></label>
+                        </div>
+                        <div class="col-md-3">
+                            <select name="disabled" id="disabled" class="form-select form-select-sm">
+                                <option value="0" selectd="selected" >No</option>
+                                <option value="1" >Yes</option>
+                              </select>
+                        </div>
+                    </div>
+                    <br>
+                <div style="text-align:center;padding:5px 0">
+                    <button type="submit" class="easyui-linkbutton" >Submit</button>&nbsp;&nbsp;&nbsp;
+                    <button type="reset" class="easyui-linkbutton" (click)="clearForm('relationshipFrm')" id="formClear">Clear</button>
+                </div>
+            </fieldset>
+            </form>
+          </div>
+    </div>
+</div>

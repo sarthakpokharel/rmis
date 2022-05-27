@@ -1,0 +1,8 @@
+<div id="qm0" class="qmmc" style="width:100%">
+	<a href=#>Main Menu</a>
+	<div>
+		<a href=#>SUb menu</a>
+	</div>
+
+</div>
+<script type="text/JavaScript">qm_create(0,false,0,500,true)</script>

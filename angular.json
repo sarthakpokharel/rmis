@@ -1,0 +1,155 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "rmis": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/rmis",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "resources/tblstyle.css",
+              "resources/sjs/dhtmlx/grid/codebase/dhtmlxgrid.css",
+              "resources/sjs/dhtmlx/grid/codebase/skins/dhtmlxgrid_dhx_skyblue.css",
+              "resources/sjs/dhtmlx/chart/codebase/dhtmlxchart.css",
+              "resources/ext/resources/css/extall.css",
+              "resources/ext/forms.css",
+              "resources/ribbon/css/bootstrap/bootstrap.min.css",
+              "resources/ribbon/css/bootstrap-dropdownhover.min.css",
+              "resources/ribbon/css/bootstrap/font-awesome.min.css",
+              "resources/jeasy/themes/default/easyui.css",
+              "resources/jeasy/themes/icon.css",
+              "resources/ribbon/css/slick/slick.css",
+              "resources/ribbon/css/slick/slick-theme.css",
+              "resources/ribbon/css/style.css",
+              "resources/ribbon/css/main-menu.css",
+              "resources/css/select2.min.css",
+              "resources/sjs/calender/nepdate.css",
+              "resources/sjs/calender/datepicker/css/jquery.datepick.css",
+              "resources/css/style.css",
+              "resources/css/tblstyle_print_changed.css",
+              "easyui/themes/default/easyui.css",
+              "easyui/themes/icon.css"
+            ],
+            "scripts": [
+              "resources/ribbon/js/jquery-3.2.1.min.js",
+              "resources/js/select2.full.min.js",
+              "resources/jeasy/jquery.easyui.min.js",
+              "resources/sjs/calender/coordinate.js",
+              "resources/sjs/ajax.ss.js",
+              "resources/sjs/calender/nepdate.js",
+              "resources/sjs/calender/datepicker/js/jquery.plugin.min.js",
+              "resources/sjs/calender/datepicker/js/jquery.datepick.min.js",
+              "resources/js/epayment.js",
+              "resources/sjs/dhtmlx/grid/codebase/dhtmlxcommon.js",
+              "resources/sjs/dhtmlx/grid/codebase/dhtmlxgrid.js",
+              "resources/sjs/dhtmlx/grid/codebase/dhtmlxgridcell.js",
+              "resources/sjs/dhtmlx/grid/codebase/ext/dhtmlxgrid_srnd.js",
+              "resources/sjs/dhtmlx/grid/codebase/ext/dhtmlxgrid_filter.js",
+              "resources/sjs/dhtmlx/grid/codebase/dhtmlxgrid_start.js",
+              "resources/sjs/dhtmlx/chart/codebase/dhtmlxchart.js",
+              "resources/ribbon/js/bootstrap.min.js",
+              "resources/ribbon/js/bootstrap-dropdownhover.min.js",
+              "resources/ribbon/js/function.js",
+              "easyui/jquery.min.js",
+              "easyui/jquery.easyui.min.js"
+              
+
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "rmis:build:production"
+            },
+            "development": {
+              "browserTarget": "rmis:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "rmis:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "rmis"
+}

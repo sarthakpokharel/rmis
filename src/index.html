@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>Rmis</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script>
+    var baseUrl = "http://localhost:8020";
+
+    function editDetail(value,row,index){
+      var path = $("#tt").data('path');
+    var m_id=row.id;
+    if(m_id==undefined)
+    {
+      m_id=row[Object.keys(row)[0]]
+    }
+    var href ="javascript:updateData('"+path+'/retrive?id='+m_id+"')";
+    return '<a href="'+href+'"><img src="'+baseUrl+'/icon/edit.gif"></a>';
+}
+
+function deleteDetail(value,row,index){
+  var path = $("#tt").data('path');
+  var m_id=row.id;
+  if(m_id==undefined)
+  {
+    m_id=row[Object.keys(row)[0]]
+  }
+  var href ="javascript:deleteData('"+path+'/exclude?id='+m_id+"')";
+  return '<a href="'+href+'"><img src="'+baseUrl+'/icon/delete.gif"></a>';
+}
+
+function updateData(path){
+  $.get(path,(dt,status)=>{
+    executeScript(dt);
+  });
+}
+
+  function deleteData(path){
+    if(window.confirm("Are you sure!, You want to delete?")){
+      $.get(path,(dt,status)=>{
+        $.parser.parse();
+      });
+    }
+}
+
+function executeScript(script,level=1){
+  if(script && script!=''){
+    var id = "dynamicScript"+level;
+    var scWid = script.replace("<script","<script id='"+id+"'");
+    $('#'+id).remove();
+    $("head").append(scWid);
+  }
+}
+
+function submitForm(e){
+  e.preventDefault();
+  var form = e.target;
+  var url = form.action;
+  var method = form.getAttribute("method");
+  var data = $(form).serialize();
+  var xhr = $.ajax({
+      'method':method,
+      'url':url,
+      'data':data
+    });
+  xhr.done(dt=>{
+    executeScript(dt);
+  });
+  xhr.fail(err=>{
+    console.log(err);
+  });
+}
+
+
+ function refreshlist(){
+    $('#tt').datagrid('reload');
+  }
+
+  function doListSearch(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = $(form).serialize();
+    var values = data.split("&");
+    var formData = {};
+    for(var it of values){
+      var keyv = it.split("=");
+      if(keyv.length > 1 ){
+        if(keyv[1]!=''){
+          formData[keyv[0]] = keyv[1];
+        }
+      }
+    }
+    $('#tt').datagrid('load', formData);
+}
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

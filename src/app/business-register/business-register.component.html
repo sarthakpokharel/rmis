@@ -1,0 +1,802 @@
+<div class="easyui-layout bod" style="width:auto; margin-left:20px; background-color:'#e1edf2';width: calc(100vw);">
+
+    <!-- <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'"
+        style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
+        <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
+            <form>
+                <input class="easyui-textbox" name="संकेत" style="width:25%"
+                    data-options="label:'संकेत',required:false">
+                &nbsp;
+                <input class="easyui-textbox" name="नाम" style="width:25%" data-options="label:'नाम',required:false">
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <a class="easyui-linkbutton l-btn l-btn-small" id="btnsave" name="btnsave"
+                    href="javascript:submit_frmsourcelevel();" group=""><span class="l-btn-left"><span
+                            class="l-btn-text">Search</span></span></a>
+
+            </form>
+
+        </div>
+
+        <table id="tt" class="easyui-datagrid" data-options="singleSelect:true,collapsible:true,"
+            url="http://localhost:8020/rmis/landtype/list-data" pageList="[2,5,10,20]" method='get' title="Load Data"
+            iconCls="icon-save" rownumbers="true" pagination="true" data-path="rmis/landtype">
+            <thead>
+                <tr>
+                    <th field="id" width="80">ID</th>
+                    <th field="landTypeNameNp" width="120">Land Type Name[NP]</th>
+                    <th field="landTypeNameEn" width="80" align="right">Land Type Name[EN]</th>
+                    <th field="edit" formatter="editDetail" width="80">Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help'"
+        style="width:calc(9.84vw); background-color: rgb(236, 242, 249);"></div> -->
+    <div data-options="region:'center',title:'व्यवसाय दर्ता ',iconCls:'icon-save'"
+        style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
+        <div style="margin: 15px;">
+
+            <form id="landTypeFrm" method="post" onsubmit="submitForm(event)" data-path="rmis/landtype/define">
+                <input type="hidden" id="landTypeId" name="landTypeId" value="">
+                <fieldset class="p-2" style="border: 1.5px solid #b5b8c8 !important">
+                    <legend class="float-none w-auto p-2" style="font: bold 11px tahoma, arial, helvetica, sans-serif">
+                        व्यवसाय दर्ता </legend>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">VAT/PAN No.</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="vatpan" id="vatpan" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">व्यवसायको नाम [NP] <span
+                                            class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="nameNp" id="nameNp" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">व्यवसायको नाम [EN] <span
+                                            class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="nameEn" id="nameEn" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">Ownership Type <span class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <select type="select" name="ownershipType" id="ownershipType"
+                                        class="form-select form-select form-select-sm"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>.......</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                       
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">Purpose <span class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="purpose" id="purpose" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">दर्ता मिति <span class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="date" name="regDate" id="regDate" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">Email</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="email" id="email" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">Mobile No.</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="mobileNo" id="mobileNo"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">व्यवसायको विवरण/प्रकृति <span
+                                            class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <select type="select" name="businessType" id="businessType"
+                                        class="form-select form-select form-select-sm">
+                                        <option value="1" selected>.......</option>
+                                       
+                                    </select>
+
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">कर चुक्ता संकेत <span
+                                            class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="taxPayerCode" id="taxPayerCode"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">पुरानो कर चुक्ता संकेत </label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="oldTaxPayerCode" id="oldTaxPayerCode"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+
+
+                    <div class="row">
+                        <fieldset class="p-2"
+                            style="border: 1.5px solid #b5b8c8 !important; margin-left: 9px; width: 98%;">
+                            <legend class="float-none w-auto p-2"
+                                style="font: bold 11px tahoma, arial, helvetica, sans-serif">व्यवसायको ठेगाना</legend>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">वडा नं.<span class="red-required">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select type="select" name="wardno" id="wardno"
+                                            class="form-select form-select form-select-sm"
+                                            aria-label="Default select example">
+                                            <option value="1" selected>.......</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">टोल </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="tole" id="tole" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">Location Area</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="localtionArea" id="localtionArea"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">घर नं </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="houseNo" id="houseNo"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">Postal Addrss </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="postalAddrss" id="postalAddrss"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </fieldset>
+
+                    </div>
+                    <br>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">व्यवसाय रहेको घर भाडाको छ/छैन <span
+                                            class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <select type="select" name="hasRent" id="hasRent"
+                                        class="form-select form-select form-select-sm"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">भाडामा रहेको भए व्यवसाय रहने घरधनीको नाम,थर </label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="landlord" id="landlord"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+
+
+
+
+                    <div class="row">
+                        <fieldset class="p-2"
+                            style="border: 1.5px solid #b5b8c8 !important; margin-left: 9px; width: 98%;">
+                            <legend class="float-none w-auto p-2"
+                                style="font: bold 11px tahoma, arial, helvetica, sans-serif"> परिचय पाटीको साइज:
+                            </legend>
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">इकाई<span class="red-required">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select type="select" name="signboardMeasureUnit" id="signboardMeasureUnit"
+                                            class="form-select form-select form-select-sm"
+                                            aria-label="Default select example">
+                                            <option value="1" selected>.......</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">लम्बाई <span class="red-required">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="signboardL" id="signboardL"
+                                            class="form-control form-control-sm">
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">चौडाई <span class="red-required">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="signboardB" id="signboardB"
+                                            class="form-control form-control-sm">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </fieldset>
+
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <fieldset class="p-2"
+                            style="border: 1.5px solid #b5b8c8 !important; margin-left: 9px; width: 98%;">
+                            <legend class="float-none w-auto p-2"
+                                style="font: bold 11px tahoma, arial, helvetica, sans-serif"> अन्यत्र दर्ता भएको भए:
+                            </legend>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">दर्ता नं</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="otherRegNo" id="otherRegNo"
+                                            class="form-control form-control-sm">
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label">कार्यालय</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="otherRegOffice" id="otherRegOffice"
+                                            class="form-control form-control-sm">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </fieldset>
+
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">व्यवसायको अधिकृत पुँजी <span
+                                            class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="authorizedCapital" id="authorizedCapital"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">व्यवसायको चालु पुँजी <span
+                                            class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="workingCapital" id="workingCapital"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">व्यवसायको चुत्ता पुँजी <span
+                                            class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="paidupCapital" id="paidupCapital"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">Approved <span class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <select  type="select" class="form-select form-select form-select-sm">
+                                        <option value="1" selected>Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">Disabled <span class="red-required">*</span></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <select  type="select" class="form-select form-select form-select-sm">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <fieldset class="p-2"
+                        style="border: 1.5px solid #b5b8c8 !important; margin-left: 9px; width: 98%;">
+                        <legend class="float-none w-auto p-2 background-color"
+                            style="font: bold 11px tahoma, arial, helvetica, sans-serif"> करदाताको व्यक्तिगत विवरण :
+                        </legend>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">करदाताको नाम [NP] <span
+                                                class="red-required">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="nameNp" id="nameNp"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">करदाताको नाम [EN] </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="nameEn" id="nameEn"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">नागरिकता नं. </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="nationaIdCardNo" id="nationaIdCardNo"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                        </div>
+                        <br>
+
+                       
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">लिंङ्ग </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select class="form-select form-select form-select-sm" type="select" name="mobile" id="mobile">
+                                            <option value="1">......</option>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Mobile No.</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="mobile" id="mobile"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Email </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="email" id="email"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                            </div>
+                            
+    
+    
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">जिल्ला </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select type="select" name="districtId" id="districtId"
+                                        class="form-select form-select form-select-sm"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>.......</option>
+                                       
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">गा.पा./ न.पा. </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select type="select" name="lgId" id="lgId"
+                                        class="form-select form-select form-select-sm"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>.......</option>
+                                       
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">वार्ड नं. </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select type="select" name="wardNo" id="wardNo"
+                                        class="form-select form-select form-select-sm"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>.......</option>
+                                       
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">टोल </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="tole" id="tole"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                </div>
+
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Street</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="col-md-9">
+                                            <input type="text" name="perStreet" id="perStreet"
+                                                class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">घर नं.</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="col-md-9">
+                                            <input type="text" name="houseNo" id="houseNo"
+                                                class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">बाबुको नाम </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="fatherName" id="fatherName"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                </div>
+
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">आमाको नाम</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="col-md-9">
+                                            <input type="text" name="motherName" id="motherName"
+                                                class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">हजुरबुवाको नाम</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="col-md-9">
+                                            <input type="text" name="grandFatherName" id="grandFatherName"
+                                                class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">हजुरआमाको नाम </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="grandMotherName" id="grandMotherName"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                </div>
+
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">पति/पत्नीको नाम</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="col-md-9">
+                                            <input type="text" name="spouseName" id="spouseName"
+                                                class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">isPrimary<span
+                                            class="red-required">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="col-md-9">
+                                            <select type="select" name="isPrimary" id="isPrimary"
+                                        class="form-select form-select form-select-sm"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <br>
+
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Share percentage </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="sharePercent" id="sharePercent"
+                                            class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                            <br>
+                            <div style="text-align:right;padding:5px 0">
+                            <button class="btn btn-success bi bi-plus"> थप </button>
+                            <br>
+                            <br>
+                            <table id="darbandiTable" class="table table-striped table-bordered" width="100%">
+
+
+                                <thead style="background-color:#F2F3F4;">
+                                    <tr>
+                                        <td>SN</td>
+                                        <td>करदाताको नाम</td>
+                                        <td>लिङ्ग</td>
+                                        <td>बाबुको नाम</td>
+                                        <td>हजुरबुवाको नाम</td>
+                                        <td>सम्पर्क नं</td>
+                                        <td>नागरिकता नं</td>
+                                        <td>जिल्ला</td>
+                                        <td>गा.पा/न.पा.</td>
+                                        <td>वार्ड नं</td>
+                                        <td>IsPrimary</td>
+                                        <td>Share percentage</td>
+                                        <td>Action</td>
+        
+                                    </tr>
+                                </thead>
+                            </table>
+                            </div>
+
+                        </fieldset>
+
+                    </div>
+
+                    <div style="text-align:center;padding:5px 0">
+                        <button type="submit" class="easyui-linkbutton">Submit</button>&nbsp;&nbsp;&nbsp;
+                        <button type="reset" class="easyui-linkbutton" (click)="clearForm('landTypeFrm')">Clear</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

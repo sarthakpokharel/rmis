@@ -1,0 +1,333 @@
+<!-- Header Start -->
+
+<section class="" style="top:0; position:absolute; width:100vw; left: 0;">
+    <nav class="navbar navbar-expand-sm blue topHeader">
+      <div class="container-fluid">
+  
+        <div class="container">
+          <div class="float-start .d-none .d-sm-block" style="color: aliceblue;">
+  
+            <img src="https://sutra.fcgo.gov.np/sutra2/images/nepal-gov-logo.png" height="25px" width="25px">
+            संचितकोष व्यवस्थापन प्रणाली [ कन्फिगरेसन]
+  
+  
+          </div>
+          <div class="float-end texts">
+  
+            <ul class="nav navbar-nav navbar-right">
+              <li><img src="https://sutra.fcgo.gov.np/sutra2/img/user.jpg" style="height: 33px; width: 35px;">
+                पंकज अधिकारी
+                [अर्थ मन्त्रालय काठमाडौ]
+              </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li>होम </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li>बाहिर जानुहोस
+                <span>(current)</span>
+              </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li>
+  
+                <div class="dropdown">
+  
+                  <i class="fa fa-caret-down" (click)="menuOpen($event)" style="cursor: pointer;"></i>
+  
+                  <div class="dropdown-menu closethis" style="z-index: 1031; padding:0; border: solid #236286;margin-top: 8px;
+                  margin-left: -150px;">
+                    <a class="dropdown-item" href="javascript:void(0)">Action</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+  
+          </div>
+  
+        </div>
+  
+  
+      </div>
+    </nav>
+  </section>
+
+  <!-- Header Start -->
+
+  <!-- Tabs Component Start -->
+
+  <section style="margin-left: -5px;">
+    <div class="row" style="
+     background-color:   #BFDBFF url(../assets/i01_bg.png) repeat-x scroll center top;
+      background-color: rgb(191, 219, 255);
+      background-position-x: center;
+      background-position-y: top;
+      background-repeat: repeat-x;
+      background-attachment: scroll;
+      background-image: url('../assets/i01_bg.png');
+      background-size: auto;
+      background-origin: padding-box;
+      background-clip: border-box;
+    ">
+      <div class="d-flex" style="position:relative;width:100%;height: 127px; ">
+  
+        <div class="main-menu d-inline-block" style="width: 45px;">
+          <div class="row ml-1" >
+            
+            <div class="btn-group dropend">
+              <div class="d-flex">
+     
+                  <i class="bi bi-grid-3x3-gap-fill" style="font-size: larger; cursor: pointer;" (click)="openMenu($event)"></i> &nbsp;
+                <i class="fa fa-caret-down" style="font-size: small; margin-top: 10px;cursor: pointer;" (click)="openMenu($event)"></i>
+       
+                
+                <ul class="dropdown-menu closethis" style="z-index: 1500; border: solid #AEBACB; background-color: #ccdbee; top: 20px;margin-top: 10px; padding: 0;">
+                  <li><a class="dropdown-item" href="javascript:void(0)">Action</a></li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="" (mouseover)="openSubMenu($event)">
+                      Submenu <i class="bi bi-caret-right-fill"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-submenu closethis" style=" background-color: #ccdbee;">
+                      <li>
+                        <a class="dropdown-item" href="javascript:void(0)">Submenu item 1</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="javascript:void(0)">Submenu item 2</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="javascript:void(0)">Submenu item 3</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="javascript:void(0)">Submenu item 4</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="javascript:void(0)">Submenu item 5</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <br><br>
+            <i class="bi bi-arrow-bar-left" style="margin-top: 22px; font-size: 2rem;"></i>
+          </div>
+          
+        </div>
+        <div class="container-fluid d-inline-block" style="position: absolute; left: 35px;">
+          <div class="tab-menu" style="position: relative;
+          top: 4px;">
+           <tabset>
+              <tab  *ngFor="let i of tabb" heading = "{{i.heading}}">       
+                <div class="d-flex align-items-stretch bd-highlight text-nowrap" style="width: calc(100vh);">
+                    <drag-scroll [scroll-x-wheel-enabled] = true [scrollbar-hidden] = true>
+                      <div class="p-2 bd-highlight" drag-scroll-item *ngFor="let items of i.tabContents">
+                        <div class="inset">
+                            <div class="submenu-container">
+                              <div class="submenu-inner-container">
+                                <ul class="float-start menu-ribbon" *ngFor="let itm of items.menus">
+                                  <li *ngFor=" let it of itm" [ngClass]="{'single1': it.type === 'single'}">
+                                    <!-- <a (click)="reloadPage('body')"><img src="{{it.icon}}" class="mic">{{it.name}}</a> -->
+                                    <a><img src="{{it.icon}}" class="mic">{{it.name}}</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="col-sm-12">
+                                <div class="bottom-text">
+                                  <a>{{items.menuSetName}}</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </drag-scroll>
+                  </div>
+              </tab>
+         
+            
+        </tabset>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs Component End -->
+
+
+  <!-- Body Part Start -->
+
+  <section style="margin-left: -18px;" >
+    <div class="row">
+      <div class="container-fluid">
+          
+  <div class="d-flex justify-content-between bd-highlight mb-3" style="background-color: #ecf2f9;">
+    <div class="bd-highlight toCollapse"
+      style="width: 16%; border: 1px solid; border-color: #95b8e7; overflow: hidden; height: calc(78vh); margin-right: 2px; resize: horizontal;">
+      <nav class="navbar navbar-light threed">
+        <div class="container-fluid text-start">
+          <div class="b-header hideSection">
+            <div class="panel-icon icon-help"></div>
+            <b class="b-header">सहयोग</b>
+          </div>
+          <div class="text-end b-header">
+            <a href="javascript:void(0)">
+              <i class="bi bi-chevron-double-right" (click)="hidesidebar($event)"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+  
+    </div>
+    <div class="bd-highlight"
+      style="width: 48%; border: 1px solid; border-color: #95b8e7; overflow: hidden; height: calc(78vh);  margin-right: 2px; resize: horizontal;">
+      <nav class="navbar navbar-light threed">
+        <div class="container-fluid">
+          <div class="panel-icon icon-save"></div>
+          <b class="b-header">स्रोतको तह</b>
+        </div>
+      </nav>
+      <div style="margin: 15px;">
+        <form style="font-size: small; color: #15428b;">
+          <fieldset class="p-2" style="border: 1.5px solid #b5b8c8 !important">
+            <legend class="float-none w-auto p-2" style="font: bold 11px tahoma, arial, helvetica, sans-serif">स्रोतको तह
+            </legend>
+  
+            <div>
+              <label>Level of Government</label>
+              <input type="text" class="padd">
+            </div>
+            <div>
+              <label>Level of Government</label>
+              <input type="text" class="padd">
+            </div>
+            <div>
+              <label>Level of Government</label>
+              <input type="text" class="padd">
+            </div>
+            <div>
+              <label>Level of Government</label>
+              <input type="text" class="padd">
+            </div>
+  
+            <div>
+              <label>Name of Government</label>
+              <select class="pad">
+                <option selected>Open if this menu </option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+  
+  
+  
+          </fieldset>
+          <br>
+          <div class="" style="text-align: end">
+            <a class="easyui-linkbutton l-btn l-btn-small" href="javascript:void(0)"
+              style="width: 50px; height: 20px;"><span class=""><span class="">Save</span></span></a>
+            &nbsp;
+            <a class="easyui-linkbutton l-btn l-btn-small" href="javascript:void(0)"
+              style="width: 50px;height: 20px;"><span class=""><span class="">Cancel</span></span></a>
+          </div>
+  
+        </form>
+      </div>
+  
+  
+    </div>
+    <div class="bd-highlight"
+      style="width: 48%; border: 1px solid; border-color: #95b8e7; overflow: hidden; height: calc(78vh); resize: horizontal;">
+      <nav class="navbar navbar-light threed">
+        <div class="container-fluid">
+          <div class="panel-icon icon-help"></div>
+          <b class="b-header">सूची</b>
+  
+        </div>
+      </nav>
+      <div>
+        <div class="row" style="margin:3px 0 3px 0; font-size: 12px; color: #15428b !important;">
+          <div class ="row" style="padding-left: 45px; margin-right: 20px;">
+            <div style="margin-top: 7px;">संकेत</div>
+             &nbsp;<input class="form-control form-control-sm" type="text" style="width: calc(5vw); color: #15428b;">
+          </div>
+          <div class="row" style="margin-right: 20px;">
+            <div style="margin-top: 7px;">नाम</div>
+            &nbsp;<input class="form-control form-control-sm" type="text" style="width: calc(5vw); color: #15428b;">
+          </div>
+          
+          <a class="easyui-linkbutton l-btn l-btn-small" href="javascript:void(0)"
+          style="width: 50px; height: 20px; margin-top: 5px;"><span class=""><span class="">खोज</span></span></a>
+  
+        </div>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td><img src="https://sutra.fcgo.gov.np/sutra2/icon/edit.gif"></td>
+              <td><img src="https://sutra.fcgo.gov.np/sutra2/icon/delete.gif"></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td><img src="https://sutra.fcgo.gov.np/sutra2/icon/edit.gif"></td>
+              <td><img src="https://sutra.fcgo.gov.np/sutra2/icon/delete.gif"></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td><img src="https://sutra.fcgo.gov.np/sutra2/icon/edit.gif"></td>
+              <td><img src="https://sutra.fcgo.gov.np/sutra2/icon/delete.gif"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <div>
+        <ul class="pagination pagination-sm">
+          <li class="page-item"><a class="page-link" href="#">
+              < </a>
+          </li>
+          <li class="page-item active" aria-current="page">
+            <span class="page-link">1</span>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">></a></li>
+        </ul>
+      </div>
+  
+      <!-- <div class="list">
+                  <ul>
+                      <li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
+                  </ul>
+          
+                  <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+          </div> -->
+  
+  
+    </div>
+  </div>
+
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Body Part End -->

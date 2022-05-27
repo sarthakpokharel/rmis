@@ -1,0 +1,148 @@
+<div id="menu" class="menu-ribbon">
+	<div class="row">
+		<div class="col-md-12" style="padding: 0px; position: fixed; left: 0; right: 0;">
+			<div class="fmis-panel with-nav-tabs panel-default">
+				<div class="panel-heading">
+					<ul class="nav nav-tabs">
+						<li class="dropdown"><a href="#" data-toggle="dropdown" aria-expanded="false"> <span
+									class="glyphicon glyphicon-th" aria-hidden="true" style="font-size: 16px;"></span>
+								<i class="fa fa-caret-down" aria-hidden="true"></i>
+							</a>
+							<ul class="dropdown-menu mods" role="menu" id="A100662272077317820">
+
+								<li (mouseenter)="closeAllSubMenus()"><a href="javascript:void(0)" data-toggle="tab" >
+										<i class="fa fa- fa-2x" aria-hidden="true"></i>
+										RMIS</a></li>
+
+								<li (mouseenter)="closeAllSubMenus()"><a href="javascript:void(0)" data-toggle="tab">
+										<i class="fa fa-check-square fa-2x" ></i>
+										अख्तियारी</a></li>
+
+								<li class="sub-menu"><a href="javascript:void(0)"
+										data-toggle="dropdown" (mouseenter)="openSubmenu($event)"> <i
+											class="fa fa-money fa-2x" aria-hidden="true"></i>राजस्व
+										<span class="caret" style=""></span>
+									</a>
+									<ul class="custom-drop hide" (mouseleave)="closeSubmenu($event)">
+
+										<li>
+											<a href="javascript:void(0)"
+												onclick="javascript:loadPage('http://localhost:8020/apphome/468523678350254')"
+												data-toggle="tab">
+												<i class="fa fa-star fa-2x" aria-hidden="true"></i>राजस्व / अनुदान
+												(प्राप्ति) </a>
+										</li>
+
+										<li>
+											<a href="javascript:void(0)"
+												onclick="javascript:loadPage('http://localhost:8020/apphome/54753908995498879')"
+												data-toggle="tab">
+												<i class="fa fa-star fa-2x" aria-hidden="true"></i>विभाज्य कोष </a>
+										</li>
+
+									</ul>
+
+								<li (mouseenter)="closeAllSubMenus()"><a href="javascript:void(0)"
+										onclick="javascript:loadPage('http://localhost:8020/apphome/55327198950083554')"
+										data-toggle="tab">
+										<i class="fa fa-suitcase fa-2x" aria-hidden="true"></i>
+										सञ्चित कोष</a></li>
+
+								<li (mouseenter)="openSubmenu($event)" class="sub-menu"><a href="javascript:void(0)"
+										data-toggle="dropdown"> <i class="fa fa-credit-card fa-2x"
+											aria-hidden="true"></i>विनियोजन लेखांकन
+										<span class="caret" style=""></span>
+									</a></li>
+									<ul class="custom-drop hide" (mouseleave)="closeSubmenu($event)">
+
+										<li>
+											<a href="javascript:void(0)"
+												onclick="javascript:loadPage('http://localhost:8020/apphome/48502814592000644')"
+												data-toggle="tab">
+												<i class="fa fa-star fa-2x" aria-hidden="true"></i>विनियोजन खर्च </a>
+										</li>
+
+										<li>
+											<a href="javascript:void(0)"
+												onclick="javascript:loadPage('http://localhost:8020/apphome/13608868067344652')"
+												data-toggle="tab">
+												<i class="fa fa-star fa-2x" aria-hidden="true"></i>कार्यसंचालन कोष </a>
+										</li>
+
+										<li>
+											<a href="javascript:void(0)"
+												onclick="javascript:loadPage('http://localhost:8020/apphome/5735018614412414')"
+												data-toggle="tab">
+												<i class="fa fa-star fa-2x" aria-hidden="true"></i>अन्तर सरकारी
+												आख्तियारी </a>
+										</li>
+
+									</ul>
+							</ul>
+						</li>
+						<!--  ribbon tabs start -->
+
+						<li *ngFor="let i of tabb" (click)="tabs()" class="tabssss"><a href="#{{i.itemid}}"
+								data-toggle="tab" id="{{i.itemid}}}">{{i.caption}}</a></li>
+
+						<!-- ribbon tab ends -->
+					</ul>
+
+
+				</div>
+				<div class="panel-body fixed" style="display: block; font-size: 12px;">
+					<div class="tab-content" *ngFor="let i of tabb; let j=index">
+
+						<div class="tab-pane fade scroll-width variable-width" id="{{i.itemid}}"
+							[ngClass]="{'active in': j == 0}">
+
+							<!-- <div class="tab-pane fade scroll-width variable-width" id="{{i.itemid}}"  *ngIf="inx == 0"> -->
+
+
+
+
+
+							<div class="p-2 bd-highlight" *ngFor="let items of i.groupItems">
+								<div class="inset">
+									<div class="submenu-container">
+										<div class="submenu-inner-container">
+											<ul class="float-start menu-ribbon" *ngFor="let itm of items.groupItems">
+												<li *ngFor=" let it of itm"
+													[ngClass]="{'single1': it.itemtype === 'Large Item'}">
+													<a routerLink="/{{it.onclick}}"><img src="{{baseUrl}}/{{it.image}}"
+															class="mic">&nbsp;{{it.caption}}</a>
+												</li>
+											</ul>
+										</div>
+										<div class="col-sm-12">
+											<div class="bottom-text">
+												<a>{{items.caption}}</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+
+
+
+	$("#home-sub-menu61292789829646642").hover(function () { $("#custom-drop61292789829646642").css({ display: "inline" }); }, function () { $("#custom-drop61292789829646642").css({ display: "none" }); });
+
+
+
+	$("#home-sub-menu67007933039059703").hover(function () { $("#custom-drop67007933039059703").css({ display: "inline" }); }, function () { $("#custom-drop67007933039059703").css({ display: "none" }); });
+
+
+</script>
