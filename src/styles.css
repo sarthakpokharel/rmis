@@ -3,6 +3,7 @@
     width: 16px;
     height: 16px;
 }
+
 .single1 .mic {
 
     width: 32px;
@@ -18,10 +19,16 @@
     margin-top: -36px !important;
 }
 
-.hide{
+.hide {
     display: none !important;
 }
 
 .show {
     display: inline !important;
-  }
+}
+
+/* .easyui-layout.bod.layout {
+    display: inline-table;
+    position: absolute;
+    top: 9pc;
+} */

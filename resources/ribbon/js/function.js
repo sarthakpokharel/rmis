@@ -31,25 +31,25 @@ timeoutact();
         $(".custom-drop").css({display: "none"});//removeClass('open');
     });
     //
-    $('.variable-width').slick({
-        dots: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow:2,
-        centerMode: false,
-        variableWidth: true
-    });
+    // $('.variable-width').slick({
+    //     dots: false,
+    //     infinite: false,
+    //     speed: 300,
+    //     slidesToShow:2,
+    //     centerMode: false,
+    //     variableWidth: true
+    // });
 
-$(function () {
-        $('[data-toggle="popover"]').popover({
-            container: 'body',
-            html: true,
-            content: function () {
-                var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
-                return clone;
-            }
-        });
-    });
+// $(function () {
+//         $('[data-toggle="popover"]').popover({
+//             container: 'body',
+//             html: true,
+//             content: function () {
+//                 var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+//                 return clone;
+//             }
+//         });
+//     });
 
 });
 

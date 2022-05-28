@@ -15,11 +15,11 @@ $('.close').on('click', function() {
 });
 
 });
-$('.variable-width').slick({
-        dots: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 7,
-        centerMode: false,
-        variableWidth: true
-    });
+// $('.variable-width').slick({
+//         dots: false,
+//         infinite: false,
+//         speed: 300,
+//         slidesToShow: 7,
+//         centerMode: false,
+//         variableWidth: true
+//     });
