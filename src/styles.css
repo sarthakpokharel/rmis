@@ -27,8 +27,16 @@
     display: inline !important;
 }
 
-/* .easyui-layout.bod.layout {
-    display: inline-table;
-    position: absolute;
-    top: 9pc;
-} */
+.red-required{
+    color: red;
+    margin-top: 10px;
+}
+
+.x-panel-mc{
+    color: #15428b;
+    margin-left: 20px !important;
+}
+.x-form-text,.x-form-field{
+    color: #15428b;
+    width: 202px;
+}

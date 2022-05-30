@@ -1,4 +1,5 @@
-<div class="easyui-layout bod" style="width:auto; margin-left:20px; background-color:'#e1edf2';width: calc(100vw);">
+<div class="cont-margin-top">
+    <div class="easyui-layout bod" style="width:auto; background-color:'#e1edf2';width: calc(100vw);min-height: calc(83vh);">
 
     <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'" style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
         <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
@@ -6,11 +7,11 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
-                        <input class="form control form-control-sm" name="code" id="code">
+                        <input class="x-form-text x-form-field" name="code" id="code">
                     </div>
                     <div class="col-md-4">
                         <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
-                       <input class="form control form-control-sm" name="name" id="name">
+                       <input class="x-form-text x-form-field" name="name" id="name">
                     </div>
                     <div class="col-md-4">
                         <button type="submit" class="easyui-linkbutton"  id="btnSearch" >Search</button>
@@ -43,10 +44,10 @@
                     
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="form-label">Fiscal Year <span class="red-required">*</span></label>
+                            <label class="form-label x-panel-mc">Fiscal Year <span class="red-required">*</span></label>
                         </div>
                         <div class="col-md-9">
-                            <select name="approved" id="approved" class="form-select form-select-sm">
+                            <select name="approved" id="approved" class="x-form-text x-form-field">
                                 <option value="1" selectd="selected">...</option>                               
                               </select>
                         </div>
@@ -55,10 +56,10 @@
 
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="form-label">Infrastructur Category <span class="red-required">*</span></label>
+                            <label class="form-label x-panel-mc">Infrastructur Category <span class="red-required">*</span></label>
                         </div>
                         <div class="col-md-9">
-                            <select name="approved" id="approved" class="form-select form-select-sm">
+                            <select name="approved" id="approved" class="x-form-text x-form-field">
                                 <option value="1" selectd="selected">...</option>                               
                               </select>
                         </div>
@@ -67,32 +68,28 @@
 
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="form-label">From Year <span class="red-required">*</span></label>
+                            <label class="form-label x-panel-mc">From Year <span class="red-required">*</span></label>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="fromYear"  id="fromYear" class="form-control form-control-sm">
+                            <input type="text" name="fromYear"  id="fromYear" class="x-form-text x-form-field">
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">To Year <span class="red-required">*</span></label>
+                            <label class="form-label x-panel-mc">To Year <span class="red-required">*</span></label>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="toYear"  id="toYear" class="form-control form-control-sm">
+                            <input type="text" name="toYear"  id="toYear" class="x-form-text x-form-field">
                         </div>
                     </div>
                     <br>
 
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="form-label">Rate</label>
+                            <label class="form-label x-panel-mc">Rate</label>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" name="infraDepreRateNameEn"  id="infraDepreRateNameEn" class="form-control form-control-sm">
+                            <input type="text" name="infraDepreRateNameEn"  id="infraDepreRateNameEn" class="x-form-text x-form-field">
                         </div>
                     </div>
-                    <div class="row">
-                        
-                    </div>
-                    <br>
 
                      
                    
@@ -105,4 +102,5 @@
             </form>
           </div>
     </div>
+</div>
 </div>

@@ -1101,15 +1101,15 @@ textarea {
     width:200px;
 }
 
-.x-form-label-left label.x-form-item-label {
+.x-form-label x-panel-mc-left label.x-form-item-label {
    text-align:left;
 }
 
-.x-form-label-right label.x-form-item-label {
+.x-form-label x-panel-mc-right label.x-form-item-label {
    text-align:right;
 }
 
-.x-form-label-top .x-form-item label.x-form-item-label {
+.x-form-label x-panel-mc-top .x-form-item label.x-form-item-label {
     width:auto;
     float:none;
     clear:none;
@@ -1118,12 +1118,12 @@ textarea {
     position:static;
 }
 
-.x-form-label-top .x-form-element {
+.x-form-label x-panel-mc-top .x-form-element {
     padding-left:0;
     padding-top:4px;
 }
 
-.x-form-label-top .x-form-item {
+.x-form-label x-panel-mc-top .x-form-item {
     padding-bottom:4px;
 }
 
@@ -1393,7 +1393,7 @@ fieldset.x-panel-collapsed .x-fieldset-bwrap {
      padding-left: 0 !important;
 }
 
-.x-form-label-top .x-hide-label label.x-form-item-label{
+.x-form-label x-panel-mc-top .x-hide-label label.x-form-item-label{
     display: none;
 }
 

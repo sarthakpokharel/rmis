@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-contents',
@@ -13,16 +14,7 @@ export class ContentsComponent implements OnInit {
    }
   
   ngOnInit(): void {
-  }
-
-  wds(keys:string){
-    return keys;
-  }
-  session(keys:string){
-    return keys;
-  }
-  moduleName(){
-    return "RMIS"
+    $.parser.parse();
   }
 
 }

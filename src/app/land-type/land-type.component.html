@@ -1,108 +1,109 @@
-<div class="easyui-layout bod" style="width:auto; margin-left:20px; background-color:'#e1edf2';width: calc(100vw);">
+<div class="cont-margin-top">
+    <div class="easyui-layout bod" style="width:auto; background-color:'#e1edf2';width: calc(100vw);min-height: calc(83vh);">
 
-    <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'" style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
-        <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
-            <form onsubmit="doListSearch(event)">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
-                        <input class="form control form-control-sm" name="code" id="code">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
-                       <input class="form control form-control-sm" name="name" id="name">
-                    </div>
-                    <div class="col-md-4">
-                        <button type="submit" class="easyui-linkbutton"  id="btnSearch" >Search</button>
-                    </div>
-                </div>  
-            </form>
-            
-            </div>
-            <table id="tt" class="easyui-datagrid" attr.data-options="{{gridOptions}}" attr.data-path="{{url}}">
-        <thead>
-            <tr>
-              
-                <th field="landTypeCode" width="120">Code</th>
-                <th field="landTypeNameNp" width="160">Land Type Name[NP]</th>
-                <th field="landTypeNameEn" width="160" >Land Type Name[EN]</th>
-                <th field="edit" formatter="editDetail" width="30" >Edit</th>
-                <th field="delete" formatter="deleteDetail" width="45" >Delete</th>
-            </tr>
-        </thead>
-    </table>
-    </div>
-    <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help'" style="width:calc(9.84vw); background-color: rgb(236, 242, 249);"></div>
-    <div data-options="region:'center',title:'जग्गाको प्रकार',iconCls:'icon-save'" style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
-        <div style="margin: 15px;">
-
-            <form id="landTypeFrm" method="post" onsubmit="submitForm(event)" action="{{url}}/define">
-                <input type="hidden" id="landTypeId" name="landTypeId" value="" data-id="true">
-                <fieldset class="p-2" style="border: 1.5px solid #b5b8c8 !important">
-                    <legend class="float-none w-auto p-2" style="font: bold 11px tahoma, arial, helvetica, sans-serif">Land Type</legend>
-                    
+        <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'" style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
+            <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
+                <form onsubmit="doListSearch(event)">
                     <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label">Code <span class="red-required">*</span></label>
+                        <div class="col-md-4">
+                            <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
+                            <input class="x-form-text x-form-field" name="code" id="code">
                         </div>
-                        <div class="col-md-9">
-                            <input type="text" name="landTypeCode" id="landTypeCode" class="form-control form-control-sm">
+                        <div class="col-md-4">
+                            <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
+                           <input class="x-form-text x-form-field" name="name" id="name">
                         </div>
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label">Name[NP] <span class="red-required">*</span></label>
+                        <div class="col-md-4">
+                            <button type="submit" class="easyui-linkbutton"  id="btnSearch" >Search</button>
                         </div>
-                        <div class="col-md-9">
-                            <input type="text" name="landTypeNameNp"  id="landTypeNameNp" class="form-control form-control-sm">
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label">Name[EN]</label>
-                        </div>
-                        <div class="col-md-9">
-                            <input type="text" name="landTypeNameEn"  id="landTypeNameEn" class="form-control form-control-sm">
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label">{{gs.wds('Approved')}} <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-3">
-                            <select name="approved" id="approved" class="form-select form-select-sm">
-                                <option value="1" selectd="selected">Yes</option>
-                                <option value="0">No</option>
-                              </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label">{{gs.wds('Disabled')}} <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-3">
-                            <select name="disabled" id="disabled" class="form-select form-select-sm">
-                                <option value="0" selectd="selected" >No</option>
-                                <option value="1" >Yes</option>
-                              </select>
-                        </div>
-                    </div>
-                    <br>
-                <div style="text-align:center;padding:5px 0">
-                    <button type="submit" class="easyui-linkbutton" >{{gs.wds('Save')}}</button>&nbsp;&nbsp;&nbsp;
-                    <button type="reset" class="easyui-linkbutton" (click)="clearForm('landTypeFrm')" id="formClear">Clear</button>
+                    </div>  
+                </form>
+                
                 </div>
-            </fieldset>
-            </form>
-          </div>
+                <table id="tt" class="easyui-datagrid" attr.data-options="{{gridOptions}}" attr.data-path="{{url}}">
+            <thead>
+                <tr>
+                  
+                    <th field="landTypeCode" width="120">Code</th>
+                    <th field="landTypeNameNp" width="160">Land Type Name[NP]</th>
+                    <th field="landTypeNameEn" width="160" >Land Type Name[EN]</th>
+                    <th field="edit" formatter="editDetail" width="30" >Edit</th>
+                    <th field="delete" formatter="deleteDetail" width="45" >Delete</th>
+                </tr>
+            </thead>
+        </table>
+        </div>
+        <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help'" style="width:calc(9.84vw); background-color: rgb(236, 242, 249);"></div>
+        <div data-options="region:'center',title:'जग्गाको प्रकार',iconCls:'icon-save'" style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
+            <div style="margin: 15px;">
+    
+                <form id="landTypeFrm" method="post" onsubmit="submitForm(event)" action="{{url}}/define">
+                    <input type="hidden" id="landTypeId" name="landTypeId" value="" data-id="true">
+                    <fieldset class="p-2" style="border: 1.5px solid #b5b8c8 !important">
+                        <legend class="float-none w-auto p-2" style="font: bold 11px tahoma, arial, helvetica, sans-serif">Land Type</legend>
+                        
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="form-label x-panel-mc x-panel-mc">Code <span class="red-required">*</span></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" name="landTypeCode" id="landTypeCode" class="x-form-text x-form-field">
+                            </div>
+                        </div>
+                        <br>
+    
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="form-label x-panel-mc">Name[NP] <span class="red-required">*</span></label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" name="landTypeNameNp"  id="landTypeNameNp" class="x-form-text x-form-field">
+                            </div>
+                        </div>
+                        <br>
+    
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="form-label x-panel-mc">Name[EN]</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" name="landTypeNameEn"  id="landTypeNameEn" class="x-form-text x-form-field">
+                            </div>
+                        </div>
+                        <br>
+    
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="form-label x-panel-mc">{{gs.wds('Approved')}} <span class="red-required">*</span></label>
+                            </div>
+                            <div class="col-md-9">
+                                <select name="approved" id="approved" class="x-form-text x-form-field">
+                                    <option value="1" selectd="selected">Yes</option>
+                                    <option value="0">No</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="form-label x-panel-mc">{{gs.wds('Disabled')}} <span class="red-required">*</span></label>
+                            </div>
+                            <div class="col-md-9">
+                                <select name="disabled" id="disabled" class="x-form-text x-form-field">
+                                    <option value="0" selectd="selected" >No</option>
+                                    <option value="1" >Yes</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <br>
+                    <div style="text-align:center;padding:5px 0">
+                        <button type="submit" class="easyui-linkbutton" >{{gs.wds('Save')}}</button>&nbsp;&nbsp;&nbsp;
+                        <button type="reset" class="easyui-linkbutton" (click)="clearForm('landTypeFrm')" id="formClear">Clear</button>
+                    </div>
+                </fieldset>
+                </form>
+              </div>
+        </div>
     </div>
 </div>
+

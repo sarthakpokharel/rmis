@@ -1,4 +1,5 @@
-<div class="easyui-layout bod" style="width:auto; margin-left:20px; background-color:'#e1edf2';width: calc(100vw);">
+<div class="cont-margin-top">
+    <div class="easyui-layout bod" style="width:auto; background-color:'#e1edf2';width: calc(100vw);min-height: calc(83vh);">
 
     <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'" style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
         <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
@@ -6,11 +7,11 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
-                        <input class="form control form-control-sm" name="code" id="code">
+                        <input class="x-form-text x-form-field" name="code" id="code">
                     </div>
                     <div class="col-md-4">
                         <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
-                       <input class="form control form-control-sm" name="name" id="name">
+                       <input class="x-form-text x-form-field" name="name" id="name">
                     </div>
                     <div class="col-md-4">
                         <button type="submit" class="easyui-linkbutton"  id="btnSearch" >Search</button>
@@ -43,54 +44,50 @@
                     
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="form-label">Code <span class="red-required">*</span></label>
+                            <label class="form-label x-panel-mc">Code <span class="red-required">*</span></label>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" name="landValuationSectorCode" id="landValuationSectorCode" class="form-control form-control-sm">
+                            <input type="text" name="landValuationSectorCode" id="landValuationSectorCode" class="x-form-text x-form-field">
                         </div>
                     </div>
                     <br>
 
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="form-label">Name[NP] <span class="red-required">*</span></label>
+                            <label class="form-label x-panel-mc">Name[NP] <span class="red-required">*</span></label>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" name="landValuationSectorNameNp"  id="landValuationSectorNameNp" class="form-control form-control-sm">
+                            <input type="text" name="landValuationSectorNameNp"  id="landValuationSectorNameNp" class="x-form-text x-form-field">
                         </div>
                     </div>
                     <br>
 
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="form-label">Name[EN]</label>
+                            <label class="form-label x-panel-mc">Name[EN]</label>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" name="landValuationSectorNameEn"  id="landValuationSectorNameEn" class="form-control form-control-sm">
+                            <input type="text" name="landValuationSectorNameEn"  id="landValuationSectorNameEn" class="x-form-text x-form-field">
                         </div>
                     </div>
                     <br>
 
-                    <div class="row">
-                        
-                    </div>
-                    <br>
 
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="form-label">{{gs.wds('Approved')}} <span class="red-required">*</span></label>
+                            <label class="form-label x-panel-mc">{{gs.wds('Approved')}} <span class="red-required">*</span></label>
                         </div>
                         <div class="col-md-3">
-                            <select name="approved" id="approved" class="form-select form-select-sm">
+                            <select name="approved" id="approved" class="x-form-text x-form-field">
                                 <option value="1" selectd="selected">Yes</option>
                                 <option value="0">No</option>
                               </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">{{gs.wds('Disabled')}} <span class="red-required">*</span></label>
+                            <label class="form-label x-panel-mc">{{gs.wds('Disabled')}} <span class="red-required">*</span></label>
                         </div>
                         <div class="col-md-3">
-                            <select name="disabled" id="disabled" class="form-select form-select-sm">
+                            <select name="disabled" id="disabled" class="x-form-text x-form-field">
                                 <option value="0" selectd="selected" >No</option>
                                 <option value="1" >Yes</option>
                               </select>
@@ -105,4 +102,5 @@
             </form>
           </div>
     </div>
+</div>
 </div>

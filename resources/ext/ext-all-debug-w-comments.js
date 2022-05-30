@@ -21594,7 +21594,7 @@ Ext.layout.FormLayout = Ext.extend(Ext.layout.AnchorLayout, {
     setContainer : function(ct){
         Ext.layout.FormLayout.superclass.setContainer.call(this, ct);
         if(ct.labelAlign){
-            ct.addClass('x-form-label-'+ct.labelAlign);
+            ct.addClass('x-form-label x-panel-mc-'+ct.labelAlign);
         }
 
         if(ct.hideLabels){
@@ -27673,7 +27673,7 @@ Ext.slider.MultiSlider = Ext.extend(Ext.BoxComponent, {
 
     // private
     beforeDestroy : function(){
-        Ext.destroyMembers(this, 'endEl', 'innerEl', 'thumb', 'halfThumb', 'foÔ¤&È–"Ì›ìĞöZ0­Ìx);
+        Ext.destroyMembers(this, 'endEl', 'innerEl', 'thumb', 'halfThumb', 'foÔ¤&È–"Ì›ï¿½ï¿½ï¿½Z0ï¿½ï¿½x);
         Ext.slider.MultiSlider.superclass.beforeDestroy.call(this);
     }
 });
@@ -57175,8 +57175,8 @@ Ext.menu.Item = Ext.extend(Ext.menu.BaseItem, {
      */
     /**
      * @cfg {String} iconCls A CSS class that specifies a background image that will be used as the icon for
-     * this item (defaults to ''ĞÁ§ {¨
-2p"ÂïÛ­nk #icon} should not be.
+     * this item (defaults to ''ï¿½ï¿½ï¿½ï¿½{ï¿½
+2pï¿½"ï¿½ï¿½Û­nk #icon} should not be.
      */
     /**
      * @cfg {String} text The text to display in this item (defaults to '').

@@ -13588,7 +13588,7 @@ Ext.layout.FormLayout = Ext.extend(Ext.layout.AnchorLayout, {
     setContainer : function(ct){
         Ext.layout.FormLayout.superclass.setContainer.call(this, ct);
         if(ct.labelAlign){
-            ct.addClass('x-form-label-'+ct.labelAlign);
+            ct.addClass('x-form-label x-panel-mc-'+ct.labelAlign);
         }
 
         if(ct.hideLabels){
@@ -39369,7 +39369,7 @@ Ext.form.ComboBox = Ext.extend(Ext.form.TriggerField, {
     selectNext : function(){
         var ct = this.store.getCount();
         if(ct > 0){
-            if(this.selectedIndexê64ì–~/˜—.Ó2u}lect(0);
+            if(this.selectedIndexï¿½64ï¿½~/ï¿½ï¿½.ï¿½2u}lect(0);
             }else if(this.selectedIndex < ct-1){
                 this.select(this.selectedIndex+1);
             }
