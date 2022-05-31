@@ -4,85 +4,37 @@
 			<div class="fmis-panel with-nav-tabs panel-default">
 				<div class="panel-heading">
 					<ul class="nav nav-tabs">
-						<li class="dropdown"><a href="#" data-toggle="dropdown" aria-expanded="false"> <span
+						<li class="dropdown">
+							<a href="#" data-toggle="dropdown" aria-expanded="false"> <span
 									class="glyphicon glyphicon-th" aria-hidden="true" style="font-size: 16px;"></span>
 								<i class="fa fa-caret-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu mods" role="menu" id="A100662272077317820">
+								<ng-container *ngFor="let m of menu">
+									<li (mouseenter)="closeAllSubMenus()" *ngIf="m.submenu==''"><a
+											href="{{baseUrl+'/apphome/'+m.Applicationid}}">
+											<i *ngIf="m.icon != ''" class="fa fa-{{m.icon}} fa-2x"></i>
+											<i *ngIf="m.icon == ''" class="fa fa-2x fa-cog"></i>
 
-								<li (mouseenter)="closeAllSubMenus()"><a href="javascript:void(0)" data-toggle="tab" >
-										<i class="fa fa- fa-2x" aria-hidden="true"></i>
-										RMIS</a></li>
-
-								<li (mouseenter)="closeAllSubMenus()"><a href="javascript:void(0)" data-toggle="tab">
-										<i class="fa fa-check-square fa-2x" ></i>
-										अख्तियारी</a></li>
-
-								<li class="sub-menu"><a href="javascript:void(0)"
-										data-toggle="dropdown" (mouseenter)="openSubmenu($event)"> <i
-											class="fa fa-money fa-2x" aria-hidden="true"></i>राजस्व
-										<span class="caret" style=""></span>
-									</a>
-									<ul class="custom-drop hide" (mouseleave)="closeSubmenu($event)">
-
-										<li>
-											<a href="javascript:void(0)"
-												onclick="javascript:loadPage('http://localhost:8020/apphome/468523678350254')"
-												data-toggle="tab">
-												<i class="fa fa-star fa-2x" aria-hidden="true"></i>राजस्व / अनुदान
-												(प्राप्ति) </a>
-										</li>
-
-										<li>
-											<a href="javascript:void(0)"
-												onclick="javascript:loadPage('http://localhost:8020/apphome/54753908995498879')"
-												data-toggle="tab">
-												<i class="fa fa-star fa-2x" aria-hidden="true"></i>विभाज्य कोष </a>
-										</li>
-
-									</ul>
-
-								<li (mouseenter)="closeAllSubMenus()"><a href="javascript:void(0)"
-										onclick="javascript:loadPage('http://localhost:8020/apphome/55327198950083554')"
-										data-toggle="tab">
-										<i class="fa fa-suitcase fa-2x" aria-hidden="true"></i>
-										सञ्चित कोष</a></li>
-
-								<li (mouseenter)="openSubmenu($event)" class="sub-menu"><a href="javascript:void(0)"
-										data-toggle="dropdown"> <i class="fa fa-credit-card fa-2x"
-											aria-hidden="true"></i>विनियोजन लेखांकन
-										<span class="caret" style=""></span>
-									</a></li>
-									<ul class="custom-drop hide" (mouseleave)="closeSubmenu($event)">
-
-										<li>
-											<a href="javascript:void(0)"
-												onclick="javascript:loadPage('http://localhost:8020/apphome/48502814592000644')"
-												data-toggle="tab">
-												<i class="fa fa-star fa-2x" aria-hidden="true"></i>विनियोजन खर्च </a>
-										</li>
-
-										<li>
-											<a href="javascript:void(0)"
-												onclick="javascript:loadPage('http://localhost:8020/apphome/13608868067344652')"
-												data-toggle="tab">
-												<i class="fa fa-star fa-2x" aria-hidden="true"></i>कार्यसंचालन कोष </a>
-										</li>
-
-										<li>
-											<a href="javascript:void(0)"
-												onclick="javascript:loadPage('http://localhost:8020/apphome/5735018614412414')"
-												data-toggle="tab">
-												<i class="fa fa-star fa-2x" aria-hidden="true"></i>अन्तर सरकारी
-												आख्तियारी </a>
-										</li>
-
-									</ul>
+											{{m.appname}}</a></li>
+									<li class="sub-menu" (mouseenter)="openSubmenu($event)" *ngIf="m.submenu!=''"><a
+											href="javascript:void(0)">
+											<i class="fa fa-{{m.icon}} fa-2x"></i>
+											{{m.appname}} <span class="caret"></span></a>
+										<ul class="custom-drop hide" (mouseleave)="closeSubmenu($event)">
+											<li *ngFor="let s of m.submenu">
+												<a href="{{baseUrl+'/apphome/'+s.menuid}}">
+													<i class="fa fa-star fa-2x" aria-hidden="true"></i>{{s.tabmenuname}}
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ng-container>
 							</ul>
 						</li>
 						<!--  ribbon tabs start -->
 
-						<li *ngFor="let i of tabb" (click)="tabs()" class="tabssss"><a href="#{{i.itemid}}"
+						<li *ngFor="let i of tabb; let t = index;" (click)="tabs()" [ngClass]="{'active': t == 0}"><a href="#{{i.itemid}}"
 								data-toggle="tab" id="{{i.itemid}}}">{{i.caption}}</a></li>
 
 						<!-- ribbon tab ends -->
