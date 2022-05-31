@@ -22,6 +22,7 @@ import { RoadInformationComponent } from './road-information/road-information.co
 import { RevenueActivityComponent } from './revenue-activity/revenue-activity.component';
 import { InfrastructureTypeComponent } from './infrastructure-type/infrastructure-type.component';
 import { InfrastructureDepreciationComponent } from './infrastructure-depreciation/infrastructure-depreciation.component';
+import { SampleFormComponent } from './sample-form/sample-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { InfrastructureDepreciationComponent } from './infrastructure-depreciati
     RevenueActivityComponent,
     InfrastructureTypeComponent,
     InfrastructureDepreciationComponent,
+    SampleFormComponent,
   ],
   imports: [
     BrowserModule,

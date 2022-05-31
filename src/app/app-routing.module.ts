@@ -18,6 +18,7 @@ import { RevenueActivityComponent } from './revenue-activity/revenue-activity.co
 import { RoadInformationComponent } from './road-information/road-information.component';
 import { RoadRelationComponent } from './road-relation/road-relation.component';
 import { RoadTypeComponent } from './road-type/road-type.component';
+import { SampleFormComponent } from './sample-form/sample-form.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,10 @@ const routes: Routes = [
           path: '',
           component: HeaderComponent,
           children:[
-           
+           {
+             path: 'sample',
+             component: SampleFormComponent
+           },
             {
               path: 'rmis/revenue-activity',
               component: RevenueActivityComponent

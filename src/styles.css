@@ -37,6 +37,23 @@
     margin-left: 20px !important;
 }
 .x-form-text,.x-form-field{
-    color: #15428b;
-    width: 202px;
+    width: 202px !important;
+}
+
+.x-form-item-label{
+    overflow: hidden;
+}
+.datagrid-view{
+    height: calc(67vh) !important;
+}
+.datagrid-view{
+    background-color: #ECF2F9;
+}
+.l-btn-text{
+    position: relative !important;
+top: -5px !important;
+font-size: 11px !important;
+}
+.easyui-linkbutton{
+    height: 24px !important;
 }
