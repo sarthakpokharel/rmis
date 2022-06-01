@@ -1,106 +1,166 @@
 <div class="cont-margin-top">
-    <div class="easyui-layout bod" style="width:auto; background-color:'#e1edf2';width: calc(100vw);min-height: calc(83vh);">
+    <div class="easyui-layout bod"
+        style="width:auto; background-color:'#e1edf2';width: calc(100vw);min-height: calc(83vh);">
 
-    <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'" style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
-        <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
-            <form onsubmit="doListSearch(event)">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
-                        <input class="x-form-text x-form-field" name="code" id="code">
+        <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'"
+            style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
+            <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
+                <form onsubmit="doListSearch(event)">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
+                            <input class="x-form-text x-form-field" style="width: 120px !important;" name="code"
+                                id="code">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
+                            <input class="x-form-text x-form-field" style="width: 120px !important;" name="name"
+                                id="name">
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" class="easyui-linkbutton" id="btnSearch">Search</button>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
-                       <input class="x-form-text x-form-field" name="name" id="name">
-                    </div>
-                    <div class="col-md-4">
-                        <button type="submit" class="easyui-linkbutton"  id="btnSearch" >Search</button>
-                    </div>
-                </div>  
-            </form>
-            
+                </form>
+
             </div>
-            <table id="tt" class="easyui-datagrid" attr.data-options="{{gridOptions}}" attr.data-path="{{url}}">
-        <thead>
-            <tr>
-              
-                <th field="relationshipCode" width="120">Code</th>
-                <th field="relationshipNameNp" width="160">Name[NP]</th>
-                <th field="relationshipNameEn" width="160" >Name[EN]</th>
-                <th field="edit" formatter="editDetail" width="30" >Edit</th>
-                <th field="delete" formatter="deleteDetail" width="45" >Delete</th>
-            </tr>
-        </thead>
-    </table>
+            <table id="tt" title=" " class="easyui-datagrid" attr.data-options="{{gridOptions}}"
+                attr.data-path="{{url}}">
+                <thead>
+                    <tr>
+
+                        <th field="landTypeCode" width="120">Code</th>
+                        <th field="landTypeNameNp" width="160">Land Type Name[NP]</th>
+                        <th field="landTypeNameEn" width="160">Land Type Name[EN]</th>
+                        <th field="edit" formatter="editDetail" width="30">Edit</th>
+                        <th field="delete" formatter="deleteDetail" width="45">Delete</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help', collapse: true"
+            style="width:calc(9.84vw); background-color: rgb(236, 242, 249);">
+        </div>
+        <div data-options="region:'center',title:'जग्गाको प्रकार',iconCls:'icon-save'"
+            style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
+            <div>
+
+                <form id="landTypeFrm" method="post" onsubmit="submitForm(event)" action="{{url}}/define">
+                    <input type="hidden" id="relationshipId" name="relationshipId" value="" data-id="true">
+
+                    <div id="ext-gen13" class="x-panel-bwrap">
+                        <div id="ext-gen16" class="x-panel-mc">
+
+                            <fieldset [style]="'width:'+ gs.getFrameWidth('45')+'px'"
+                                class=" x-fieldset x-form-label-left" id="ext-comp-1008">
+                                <legend style="-moz-user-select: none;" id="ext-gen31"
+                                    class="x-fieldset-header x-unselectable">
+                                    <span id="ext-gen35" class="x-fieldset-header-text">{{gs.wds("Relationship")}}
+                                    </span>
+                                </legend>
+                                <input type="hidden" id="landTypeId" name="landTypeId" value="" data-id="true">
+                                <div id="ext-gen32" class="x-fieldset-bwrap">
+                                    <div [style]="'height: auto; width:'+gs.getFrameWidth('45')+'px;'" id="ext-gen33"
+                                        class="x-fieldset-body">
+                                        <!-- Frame _ Code Block End ================-->
+
+                                        <!-- Textbox -->
+
+                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("Code")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="relationshipCode" name="relationshipCode"
+                                                    class="x-form-text x-form-field" required />
+                                                &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- End Textbox -->
+
+                                        <!-- Textbox -->
+
+                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" title='{{""}}'>{{gs.wds("Name[NP]")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="relationshipNameNp" name="relationshipNameNp"
+                                                    class="x-form-text x-form-field" required /> &nbsp;<span
+                                                    class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- End Textbox -->
+
+                                        <!-- Textbox -->
+
+                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" title='{{""}}'>{{gs.wds("Name[EN]")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="relationshipNameEn" name="relationshipNameEn"
+                                                    class="x-form-text x-form-field" />
+                                                <!-- &nbsp;<span class="red-required">*</span> -->
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- End Textbox -->
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("Approved")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="approved" name="approved" class="x-form-text x-form-field">
+                                                    <option value="0">No</option>
+                                                    <option value="1" selected="selected">Yes</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("Disabled")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="disabled" name="disabled" class="x-form-text x-form-field">
+                                                    <option value="0" selected="selected">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div style="text-align:center;padding:5px;">
+                                <!-- Button start-->
+
+                                <a class="easyui-linkbutton" type="submit"
+                                    style="user-select: none;">{{gs.wds('Save')}}</a>
+
+                                &nbsp;
+
+                                <a type="reset" class="easyui-linkbutton" (click)="clearForm('landTypeFrm')"
+                                    id="formClear" style="user-select: none;">Cancel</a>
+
+                            </div>
+                            <!--End button-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help'" style="width:calc(9.84vw); background-color: rgb(236, 242, 249);"></div>
-    <div data-options="region:'center',title:'नाता',iconCls:'icon-save'" style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
-        <div style="margin: 15px;">
-
-            <form id="relationshipFrm" method="post" onsubmit="submitForm(event)" action="{{url}}/define">
-                <input type="hidden" id="relationshipId" name="relationshipId" value="" data-id="true">
-                <fieldset class="p-2" style="border: 1.5px solid #b5b8c8 !important">
-                    <legend class="float-none w-auto p-2" style="font: bold 11px tahoma, arial, helvetica, sans-serif">relationship</legend>
-                    
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">Code <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-9">
-                            <input type="text" name="relationshipCode" id="relationshipCode" class="x-form-text x-form-field">
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">Name[NP] <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-9">
-                            <input type="text" name="relationshipNameNp"  id="relationshipNameNp" class="x-form-text x-form-field">
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">Name[EN]</label>
-                        </div>
-                        <div class="col-md-9">
-                            <input type="text" name="relationshipNameEn"  id="relationshipNameEn" class="x-form-text x-form-field">
-                        </div>
-                    </div>
-                    <br>
-
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">Approved <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-3">
-                            <select name="approved" id="approved" class="x-form-text x-form-field">
-                                <option value="1" selectd="selected">Yes</option>
-                                <option value="0">No</option>
-                              </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">Disabled <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-3">
-                            <select name="disabled" id="disabled" class="x-form-text x-form-field">
-                                <option value="0" selectd="selected" >No</option>
-                                <option value="1" >Yes</option>
-                              </select>
-                        </div>
-                    </div>
-                    <br>
-                <div style="text-align:center;padding:5px 0">
-                    <button type="submit" class="easyui-linkbutton" >Submit</button>&nbsp;&nbsp;&nbsp;
-                    <button type="reset" class="easyui-linkbutton" (click)="clearForm('relationshipFrm')" id="formClear">Clear</button>
-                </div>
-            </fieldset>
-            </form>
-          </div>
-    </div>
-</div>
 </div>

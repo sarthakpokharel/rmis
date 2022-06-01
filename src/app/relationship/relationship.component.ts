@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GeneralService} from '../general.service'
 
 declare var $: any;
 declare var baseUrl:string;
@@ -12,7 +13,7 @@ export class RelationshipComponent implements OnInit {
   url='';
   partUrl = 'rmis/relationship';
   gridOptions:any;
-  constructor() {
+  constructor(public gs:GeneralService) {
     this.url=baseUrl+'/'+this.partUrl;
     this.gridOptions = "singleSelect:true,collapsible:true,"
                       +"method:'get',"                     

@@ -1,132 +1,297 @@
 <div class="cont-margin-top">
-    <div class="easyui-layout bod" style="width:auto; background-color:'#e1edf2';width: calc(100vw);min-height: calc(83vh);">
+    <div class="easyui-layout bod"
+        style="width:auto; background-color:'#e1edf2';width: calc(100vw);min-height: calc(83vh);">
 
-    <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'" style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
-        <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
-            <form onsubmit="doListSearch(event)">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
-                        <input class="x-form-text x-form-field" name="code" id="code">
+        <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'"
+            style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
+            <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
+                <form onsubmit="doListSearch(event)">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="">संकेत &nbsp;&nbsp;&nbsp;</label>
+                            <input class="x-form-text x-form-field" style="width: 120px !important;" name="code"
+                                id="code">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
+                            <input class="x-form-text x-form-field" style="width: 120px !important;" name="name"
+                                id="name">
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" class="easyui-linkbutton" id="btnSearch">Search</button>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label for="">नाम &nbsp;&nbsp;&nbsp;</label>
-                       <input class="x-form-text x-form-field" name="name" id="name">
-                    </div>
-                    <div class="col-md-4">
-                        <button type="submit" class="easyui-linkbutton"  id="btnSearch" >Search</button>
-                    </div>
-                </div>  
-            </form>
-            
+                </form>
+
             </div>
-            <table id="tt" class="easyui-datagrid" attr.data-options="{{gridOptions}}" attr.data-path="{{url}}">
-        <thead>
-            <tr>
-              
-                <th field="landTypeCode" width="120">Code</th>
-                <th field="landTypeNameNp" width="160">Name[NP]</th>
-                <th field="landTypeNameEn" width="160" >Name[EN]</th>
-                <th field="edit" formatter="editDetail" width="30" >Edit</th>
-                <th field="delete" formatter="deleteDetail" width="45" >Delete</th>
-            </tr>
-        </thead>
-    </table>
+            <table id="tt" title=" " class="easyui-datagrid" attr.data-options="{{gridOptions}}"
+                attr.data-path="{{url}}">
+                <thead>
+                    <tr>
+
+                        <th field="landTypeCode" width="120">Code</th>
+                        <th field="landTypeNameNp" width="160">Land Type Name[NP]</th>
+                        <th field="landTypeNameEn" width="160">Land Type Name[EN]</th>
+                        <th field="edit" formatter="editDetail" width="30">Edit</th>
+                        <th field="delete" formatter="deleteDetail" width="45">Delete</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help', collapse: true"
+            style="width:calc(9.84vw); background-color: rgb(236, 242, 249);"></div>
+        <div data-options="region:'center',title:'जग्गाको प्रकार',iconCls:'icon-save'"
+            style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
+            <div>
+
+                <form id="landTypeFrm" method="post" onsubmit="submitForm(event)" action="{{url}}/define">
+                    <input type="hidden" id="landTypeId" name="landTypeId" value="" data-id="true">
+
+                    <div id="ext-gen13" class="x-panel-bwrap">
+                        <div id="ext-gen16" class="x-panel-mc">
+                            <fieldset [style]="'width:'+ gs.getFrameWidth('45')+'px'"
+                                class=" x-fieldset x-form-label-left" id="ext-comp-1008">
+                                <legend style="-moz-user-select: none;" id="ext-gen31"
+                                    class="x-fieldset-header x-unselectable">
+                                    <span id="ext-gen35" class="x-fieldset-header-text">{{gs.wds("सहायक रजसव / खर्चशिर्षक")}} </span>
+                                </legend>
+                                <div id="ext-gen32" class="x-fieldset-bwrap">
+                                    <div [style]="'height: auto; width:'+gs.getFrameWidth('45')+'px;'" id="ext-gen33"
+                                        class="x-fieldset-body">
+                                        <!-- Frame _ Code Block End ================-->
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("प्रशानिक तह")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="approved" name="approved" class="x-form-text x-form-field">
+                                                    <option value="">........</option>
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select> &nbsp;
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("प्रशानिक निकाय")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="approved" name="approved" class="x-form-text x-form-field">
+                                                    <option value="">........</option>
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select> &nbsp;
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("संस्था")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="approved" name="approved" class="x-form-text x-form-field">
+                                                    <option value="">........</option>
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select> &nbsp;
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("आर्थिक संकेत प्रकार")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="approved" name="approved" class="x-form-text x-form-field">
+                                                    <option value="">........</option>
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("आर्थिक संकेत")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="approved" name="approved" class="x-form-text x-form-field">
+                                                    <option value="">........</option>
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("आर्थिक संकेत")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="approved" name="approved" class="x-form-text x-form-field">
+                                                    <option value="">........</option>
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("संकेत")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="approved" name="approved" class="x-form-text x-form-field">
+                                                    <option value="">........</option>
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+
+                                        <!-- Textbox -->
+
+                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("Name [NP]")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                    class="x-form-text x-form-field" required /> &nbsp;<span
+                                                    class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- End Textbox -->
+
+
+                                        <!-- Textbox -->
+
+                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("Name [EN]")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                    class="x-form-text x-form-field" required /> &nbsp;
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- End Textbox -->
+
+
+                                        <!-- Textbox -->
+
+                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("विविरण अंग्रेजीमा")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                    class="x-form-text x-form-field" required /> &nbsp;
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- End Textbox -->
+
+                                        <!-- Textbox -->
+
+                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("विविरण नेपालीमा")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                    class="x-form-text x-form-field" required />
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- End Textbox -->
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("Approved")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="approved" name="approved" class="x-form-text x-form-field">
+                                                    <option value="0">No</option>
+                                                    <option value="1" selected="selected">Yes</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+
+
+                                        <!-- Combobox Start-->
+
+                                        <div class="x-form-item">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("Disabled")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="disabled" name="disabled" class="x-form-text x-form-field">
+                                                    <option value="0" selected="selected">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div style="text-align:center;padding:5px; float: left; margin-left: 560px;">
+                                <!-- Button start-->
+
+                                <a class="easyui-linkbutton" type="submit"
+                                    style="user-select: none;">{{gs.wds('Save')}}</a>
+
+                                &nbsp;
+
+                                <a type="reset" class="easyui-linkbutton" (click)="clearForm('landTypeFrm')"
+                                    id="formClear" style="user-select: none;">Cancel</a>
+
+                            </div>
+                            <!--End button-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div data-options="region:'west',split:true,title:'सहयोग',iconCls:'icon-help'" style="width:calc(9.84vw); background-color: rgb(236, 242, 249);"></div>
-    <div data-options="region:'center',title:'राजस्व क्रियाकलाप',iconCls:'icon-save'" style="width: calc(48.07vw); background-color: rgb(236, 242, 249);">
-        <div style="margin: 15px;">
-
-            <form id="landTypeFrm" method="post" onsubmit="submitForm(event)" action="{{url}}/define">
-                <input type="hidden" id="landTypeId" name="landTypeId" value="" data-id="true">
-                <fieldset class="p-2" style="border: 1.5px solid #b5b8c8 !important">
-                    <legend class="float-none w-auto p-2" style="font: bold 11px tahoma, arial, helvetica, sans-serif">Revenue Collection Activity</legend>
-                    
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">{{gs.wds('Revenue Heading')}}</label>
-                        </div>
-                        <div class="col-md-9">                            
-                            <select name="revenueId" id="revenueId" class="x-form-text x-form-field">
-                         
-                                <option value="0" >......</option>
-
-                             <option value="11131:0">11131 | सम्पत्ती, बहाल तथा पट्टा वापतको आयमा लाग्ने कर</option><option value="11313:0">11313 | एकीकृत सम्पती कर</option><option value="11314:0">11314 | भुमिकर/मालपोत</option><option value="11321:0">11321 | घरवहाल कर</option><option value="11322:0">11322 | वहाल विटौरी कर</option><option value="11451:0">11451 | सवारी साधन कर (साना सवारी)</option><option value="11452:0">11452 | पुर्वाधार सेवाको उपयोगमा लाग्ने कर</option><option value="11479:0">11479 | अन्य मनोरञ्जन कर</option><option value="11611:0">11611 | व्यवसायले भुक्तानी गर्ने </option><option value="11621:0">11621 | व्यवसाय बाहेक अन्यले भुक्तानी गर्ने </option><option value="11631:0">11631 | कृषितथा पशुजन्य वस्तुको व्यावसायिक कारोवारमा लाग्ने कर</option><option value="11632:0">11632 | अखेटोपहारमा लाग्ने कर</option><option value="11691:0">11691 | अन्य कर</option><option value="13411:0">13411 | अन्य संस्थागत आन्तरिक अनुदान</option><option value="13412:0">13412 | अन्य व्यक्तिगत आन्तरिक अनुदान</option><option value="14111:0">14111 | वित्तीय निकायबाट प्राप्त ब्याज</option><option value="14112:0">14112 | व्यापारिक निकायबाट प्राप्त ब्याज</option><option value="14113:0">14113 | औद्यौगिक निकायबाट प्राप्त ब्याज</option><option value="14114:0">14114 | सेवामुलक निकायबाट प्राप्त ब्याज</option><option value="14119:0">14119 | अन्य निकायबाट प्राप्त ब्याज</option><option value="14121:0">14121 | वित्तीय निकायबाट प्राप्त लाभांश</option>
-                             <option value="14122:0">14122 | व्यापारिक निकायबाट प्राप्त लाभांश</option><option value="14123:0">14123 | औद्यौगिक निकायबाट प्राप्त लाभांश</option><option value="14124:0">14124 | सेवामुलक निकायबाट प्राप्त लाभांश</option><option value="14129:0">14129 | अन्य निकायबाट प्राप्त लाभांश</option><option value="14151:0">14151 | सरकारी सम्पत्तीको वहालबाट प्राप्त आय</option><option value="14159:0">14159 | अन्य स्रोतबाट प्राप्त रोयल्टी</option><option value="14191:0">14191 | पर्यटन शुल्क</option><option value="14192:0">14192 | पदयात्रा शुल्क</option><option value="14211:0">14211 | कृषि उत्पादनको बिक्रीबाट प्राप्त रकम</option><option value="14212:0">14212 | सरकारी सम्पतीको बिक्रीबाट प्राप्त रकम</option><option value="14213:0">14213 | अन्य बिक्रीबाट प्राप्त रकम</option><option value="14216:0">14216 | निजी धारा वापतको शुल्क</option><option value="14217:0">14217 | नहर तथा कुलो उपयोग वापतको शुल्क</option><option value="14218:0">14218 | विद्युत सेवा शुल्क</option><option value="14219:0">14219 | अन्य सेवा शुल्क तथा बिक्री</option><option value="14221:0">14221 | न्यायिक दस्तूर</option><option value="14223:0">14223 | शिक्षा क्षेत्रको आम्दानी</option><option value="14224:0">14224 | परीक्षा शुल्क</option><option value="14225:0">14225 | यातायात क्षेत्रको आम्दानी</option>
-                             <option value="14229:0">14229 | अन्य प्रशासनिक सेवा शुल्क</option>
-                             <option value="14241:0">14241 | पार्किङ्ग शुल्क</option><option value="14242:0">14242 | नक्सापास दस्तुर</option><option value="14243:0">14243 | सिफारिश दस्तुर</option><option value="14244:0">14244 | व्यक्तिगत घटना दर्ता दस्तुर</option><option value="14245:0">14245 | नाता प्रमाणित दस्तुर</option><option value="14249:0">14249 | अन्य दस्तुर</option><option value="14253:0">14253 | व्यावसाय रजिष्ट्रेशन दस्तुर</option><option value="14254:0">14254 | रेडियो/ एफ.एम.सञ्चालन दस्तुर</option><option value="14262:0">14262 | विद्युत सम्बन्धी दस्तुर </option>
-    <option value="14263:0">14263 | जलस्रोत सम्बन्धी अन्य दस्तुर </option><option value="14265:0">14265 | अन्य क्षेत्रको आय</option><option value="14311:0">14311 | न्यायिक दण्ड,  जरिवाना र जफत</option><option value="14312:0">14312 | प्रशासनिक दण्ड, जरिवाना र जफत</option><option value="14313:0">14313 | धरौटी सदरस्याहा</option><option value="14411:0">14411 | चालु हस्तान्तरण</option><option value="14421:0">14421 | पूँजीगत हस्तान्तरण</option><option value="14511:0">14511 | बीमा दावी प्राप्ति</option><option value="14521:0">14521 | प्रदुषण नियन्त्रण शुल्क</option><option value="14529:0">14529 | अन्य राजस्व</option><option value="14531:0">14531 | सरकारी घर, जग्गा, गुडवील बिक्रीबाट प्राप्त रकम</option><option value="14611:0">14611 | व्यवसाय कर</option>
-    <option value="15111:0">15111 | बेरूजू</option><option value="15112:0">15112 | निकासा फिर्ता</option>
-    <option value="15113:0">15113 | अनुदान फिर्ता</option><option value="32121:0">32121 | नगद</option>
-</select>
-
-                              
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">Code <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-9">
-                            <input type="text" name="landTypeCode" id="landTypeCode" class="x-form-text x-form-field">
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">Name[NP] <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-9">
-                            <input type="text" name="landTypeNameNp"  id="landTypeNameNp" class="x-form-text x-form-field">
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">Name[EN]</label>
-                        </div>
-                        <div class="col-md-9">
-                            <input type="text" name="landTypeNameEn"  id="landTypeNameEn" class="x-form-text x-form-field">
-                        </div>
-                    </div>
-                    <br>
-
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">{{gs.wds('Approved')}} <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-9">
-                            <select name="approved" id="approved" class="x-form-text x-form-field">
-                                <option value="1" selectd="selected">Yes</option>
-                                <option value="0">No</option>
-                              </select>
-                        </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                        <div class="col-md-3">
-                            <label class="form-label x-panel-mc">{{gs.wds('Disabled')}} <span class="red-required">*</span></label>
-                        </div>
-                        <div class="col-md-9">
-                            <select name="disabled" id="disabled" class="x-form-text x-form-field">
-                                <option value="0" selectd="selected" >No</option>
-                                <option value="1" >Yes</option>
-                              </select>
-                        </div>
-                    </div>
-                    <br>
-                <div style="text-align:center;padding:5px 0">
-                    <button type="submit" class="easyui-linkbutton" >{{gs.wds('Save')}}</button>&nbsp;&nbsp;&nbsp;
-                    <button type="reset" class="easyui-linkbutton" (click)="clearForm('landTypeFrm')" id="formClear">Clear</button>
-                </div>
-            </fieldset>
-            </form>
-          </div>
-    </div>
-</div>
 </div>

@@ -23,6 +23,7 @@ import { RevenueActivityComponent } from './revenue-activity/revenue-activity.co
 import { InfrastructureTypeComponent } from './infrastructure-type/infrastructure-type.component';
 import { InfrastructureDepreciationComponent } from './infrastructure-depreciation/infrastructure-depreciation.component';
 import { SampleFormComponent } from './sample-form/sample-form.component';
+import { TaxPayerRegisterComponent } from './tax-payer-register/tax-payer-register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { SampleFormComponent } from './sample-form/sample-form.component';
     InfrastructureTypeComponent,
     InfrastructureDepreciationComponent,
     SampleFormComponent,
+    TaxPayerRegisterComponent,
   ],
   imports: [
     BrowserModule,

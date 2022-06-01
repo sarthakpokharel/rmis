@@ -19,6 +19,7 @@ import { RoadInformationComponent } from './road-information/road-information.co
 import { RoadRelationComponent } from './road-relation/road-relation.component';
 import { RoadTypeComponent } from './road-type/road-type.component';
 import { SampleFormComponent } from './sample-form/sample-form.component';
+import { TaxPayerRegisterComponent } from './tax-payer-register/tax-payer-register.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,14 @@ const routes: Routes = [
              path: 'sample',
              component: SampleFormComponent
            },
+           {
+             path:'rmis/relationships',
+             component: RelationshipComponent
+           },
+           {
+            path: 'rmis/personal-tax-payer',
+            component: TaxPayerRegisterComponent
+          },
             {
               path: 'rmis/revenue-activity',
               component: RevenueActivityComponent
