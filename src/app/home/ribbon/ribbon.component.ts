@@ -121,8 +121,8 @@ export class RibbonComponent implements OnInit {
     //   elem[i].classList.add('hide');
 
     // }
-    ele.nextElementSibling?.classList.remove('hide')
-    ele.nextElementSibling?.classList.add('show')
+    // ele.nextElementSibling?.classList.remove('hide')
+    // ele.nextElementSibling?.classList.add('show')
 
   }
 
