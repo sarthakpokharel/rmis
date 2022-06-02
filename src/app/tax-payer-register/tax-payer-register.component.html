@@ -56,7 +56,8 @@
                                     <div class="col-md-8">
                                         <!-- Textbox -->
                                     
-                                    <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                    <div class="x-form-item">
+
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("करदाता नम्बर:")}}
@@ -81,7 +82,7 @@
                                 <div class="col-md-6">
                                     <!-- Textbox -->
 
-                                    <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                    <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("पछिल्लो व्यक्तिगत करदाता नंबर:")}}</label>
@@ -105,7 +106,7 @@
                                     <span id="ext-gen35" class="x-fieldset-header-text">{{gs.wds("")}}
                                     </span>
                                 </legend>
-                                <input type="hidden" id="taxpayertype" name="taxpayertype" value="1" data-id="true">
+                                <input type="hidden" id="taxpayertype" name="taxpayertype">
                                 <div id="ext-gen32" class="x-fieldset-bwrap">
                                     <div [style]="'height: auto; width:'+gs.getFrameWidth('45')+'px;'" id="ext-gen33"
                                         class="x-fieldset-body">
@@ -113,48 +114,73 @@
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
-                                            <label style="overflow:hidden;"
-                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                        <div class="x-form-item">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label style="overflow:hidden;"
+                                                [style]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("रास्ट्रिय परिचय पत्र नंबर")}}
                                             </label>
-                                            <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                    class="x-form-text x-form-field" required /> &nbsp;<span
-                                                    class="red-required">*</span>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="x-form-element" style="padding-left: 80px;">
+                                                        <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                            class="x-form-text x-form-field" required /> &nbsp;<span
+                                                            class="red-required">*</span>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            
+                                         
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- End Textbox -->
 
                                          <!-- Textbox -->
 
-                                         <div id="ext-gen1" class="x-form-item " tabindex="-1">
-                                            <label style="overflow:hidden;"
+                                         <div class="x-form-item">
+                                             <div class="row">
+                                                 <div class="col-md-3">
+                                                    <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("भ्याट/पान नंबर")}}
                                             </label>
-                                            <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                    class="x-form-text x-form-field" required /> &nbsp;<span
-                                                    class="red-required">*</span>
-                                            </div>
+                                                 </div>
+                                                 <div class="col-md-9">
+                                                    <div class="x-form-element" style="padding-left: 80px;">
+                                                        <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                            class="x-form-text x-form-field" required /> &nbsp;<span
+                                                            class="red-required">*</span>
+                                                    </div>
+                                                 </div>
+                                             </div>
+                                            
+                                            
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- End Textbox -->
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
-                                            <label style="overflow:hidden;"
-                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                        <div class="x-form-item">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label style="overflow:hidden;"
+                                                [style]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("पुरानो करदाता नंबर")}}
                                             </label>
-                                            <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                    class="x-form-text x-form-field" required /> &nbsp;<span
-                                                    class="red-required">*</span>
+                                                </div>  
+                                                
+                                                <div class="col-md-9">
+                                                    <div class="x-form-element" style="padding-left: 80px;">
+                                                        <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                            class="x-form-text x-form-field" required /> &nbsp;<span
+                                                            class="red-required">*</span>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            
+                                           
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- End Textbox -->
@@ -178,7 +204,7 @@
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                        <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("First Name")}}
@@ -194,7 +220,7 @@
 
                                          <!-- Textbox -->
 
-                                         <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                         <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("Middle Name")}}
@@ -210,7 +236,7 @@
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                        <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("Last Name")}}
@@ -226,7 +252,7 @@
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                        <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("DOB")}}
@@ -355,7 +381,7 @@
 
                                      <!-- Textbox -->
 
-                                     <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                     <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("नागरिकता नंबर")}}
@@ -386,7 +412,7 @@
 
                                     <!-- Textbox -->
 
-                                    <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                    <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("कार्यालय")}}
@@ -402,7 +428,7 @@
 
                                     <!-- Textbox -->
 
-                                    <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                    <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("बुबाको नाम")}}
@@ -418,7 +444,7 @@
 
                                      <!-- Textbox -->
 
-                                     <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                     <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("आमाको नाम")}}
@@ -434,7 +460,7 @@
 
                                     <!-- Textbox -->
 
-                                    <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                    <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("श्रीमान/श्रीमती को नाम")}}
@@ -450,7 +476,7 @@
 
                                      <!-- Textbox -->
 
-                                     <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                     <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("बाजेको नाम")}}
@@ -466,7 +492,7 @@
 
                                     <!-- Textbox -->
 
-                                    <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                    <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("बजईको नाम")}}
@@ -482,7 +508,7 @@
 
                                     <!-- Textbox -->
 
-                                    <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                    <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("सासु/ससुराको नाम")}}
@@ -561,7 +587,7 @@
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                        <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("टोल")}}
@@ -577,7 +603,7 @@
 
                                          <!-- Textbox -->
 
-                                         <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                         <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("मार्ग")}}
@@ -593,7 +619,7 @@
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                        <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("घर नंबर")}}
@@ -609,7 +635,7 @@
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                        <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("फोन नंबर")}}
@@ -625,7 +651,7 @@
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                        <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("मोबाइल नंबर")}}
@@ -641,7 +667,7 @@
 
                                         <!-- Textbox -->
 
-                                        <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                        <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("इमेल")}}
@@ -719,7 +745,7 @@
 
                                     <!-- Textbox -->
 
-                                    <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                    <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("टोल")}}
@@ -735,7 +761,7 @@
 
                                      <!-- Textbox -->
 
-                                     <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                     <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("मार्ग")}}
@@ -751,7 +777,7 @@
 
                                     <!-- Textbox -->
 
-                                    <div id="ext-gen1" class="x-form-item " tabindex="-1">
+                                    <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("घर नंबर")}}
