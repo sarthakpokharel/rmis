@@ -30,6 +30,80 @@ export class TaxPayerRegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  sameAsPerAddress(e: any){
+    const el: any = e.target;
+
+    const tempDistrictId = this.getFormDataElm('tempDistrictId');
+      const tempLocalLevelId =  this.getFormDataElm('tempLocalLevelId');
+      const tempWardNo =  this.getFormDataElm ('tempWardNo');
+      const tempTole = this.getFormDataElm('tempTole');
+      const tempStreet = this.getFormDataElm('tempStreet');
+      const tempHouserNo = this.getFormDataElm('tempHouserNo');
+
+
+    if (el.checked){
+      //bring all permanent address and store in temp addresses
+      const perDistrictId = this.getFormData('perDistrictId')
+      const perLocalLevelId =  this.getFormData('perLocalLevelId');
+      const perWardNo =  this.getFormData ('perWardNo');
+      const perTole = this.getFormData('perTole');
+      const perStreet = this.getFormData('perStreet');
+      const perHouserNo = this.getFormData('perHouserNo');
+
+      if (!perDistrictId || !perLocalLevelId || !perWardNo){
+        alert("Permanant Address Fields Empty");
+        el.checked = false
+        return;
+      }
+      else{
+        tempDistrictId.value = perDistrictId;
+        tempDistrictId.disabled = true;
+  
+        tempLocalLevelId.value = perLocalLevelId;
+        tempLocalLevelId.disabled = true;
+  
+        tempWardNo.value = perWardNo;
+        tempWardNo.disabled = true;
+  
+        tempTole.value = perTole;
+        tempTole.textContent = perTole;
+        tempTole.disabled = true;
+  
+        tempStreet.value = perStreet;
+        tempStreet.textContent = perStreet;
+        tempStreet.disabled = true;
+  
+        tempHouserNo.value = perHouserNo;
+        tempHouserNo.textContent = perHouserNo;
+        tempHouserNo.disabled = true;
+      }
+
+
+    }
+    else{
+      tempDistrictId.value = "";
+      tempDistrictId.disabled = false;
+
+      tempLocalLevelId.value = "";
+      tempLocalLevelId.disabled = false;
+
+      tempWardNo.value = "";
+      tempWardNo.disabled = false;
+
+      tempTole.value = "";
+      tempTole.textContent = "";
+      tempTole.disabled = false;
+
+      tempStreet.value = "";
+      tempStreet.textContent = "";
+      tempStreet.disabled = false;
+
+      tempHouserNo.value = "";
+      tempHouserNo.textContent = "";
+      tempHouserNo.disabled = false;
+    }
+  }
     
 
   clearForm(formId:string){
@@ -44,21 +118,21 @@ export class TaxPayerRegisterComponent implements OnInit {
       alert("Name Cannot Be Empty")
       return;
     }
-    else if (this.getFormData('relationId') == "initialState"){
+    else if (this.getFormData('relationId') == ""){
       this.getFormDataElm('relationId').focus;
       alert("Select a relation");
       return;
     }
 
       var nameNp = this.getFormData("nameNp");
-      var profession = this.getFormData("profession");
+      var profession = this.getFormData("professions");
       var relation = this.getFormData("relationId");
       var remarks = this.getFormData("remarks");
       if (this.editIndex != -1) {
-        this.table[this.editIndex] = [nameNp, profession, relation, remarks];
+        this.table[this.editIndex] = [nameNp, relation, profession, remarks];
         this.editIndex = -1;
       } else {
-        this.table.push([nameNp, profession, relation, remarks]);
+        this.table.push([nameNp, relation, profession, remarks]);
       }
       this.addToTextElm();
       this.clearTblForm();
@@ -67,12 +141,12 @@ export class TaxPayerRegisterComponent implements OnInit {
   }
   clearTblForm() {
     const formIds = ["nameNp", "remarks"];
-    const otherFormIds = ["profession", "relationId"]
+    const otherFormIds = ["professions", "relationId"]
     for (const fid of formIds) {
       (document.getElementById(fid) as HTMLInputElement).value = "";
     }
     for (const i of otherFormIds){
-      (document.getElementById(i) as HTMLInputElement).value = "initialState";
+      (document.getElementById(i) as HTMLInputElement).value = "";
     }
   }
 
@@ -103,19 +177,8 @@ export class TaxPayerRegisterComponent implements OnInit {
     this.editIndex = index;
     this.setFormData('nameNp', arr[0]);
     this.setFormData('relationId', arr[1]);
-    this.setFormData('profession', arr[2]);
+    this.setFormData('professions', arr[2]);
     this.setFormData('remarks', arr[3]);
-  }
-  fieldArray: Array<any> = [];
-  newAttribute: any = {};
-
-  addFieldValue() {
-    this.fieldArray.push(this.newAttribute)
-    this.newAttribute = {};
-  }
-
-  deleteFieldValue(index: any) {
-    this.fieldArray.splice(index, 1);
   }
 
   deleteData(index: any) {

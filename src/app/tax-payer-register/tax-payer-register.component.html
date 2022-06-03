@@ -2,8 +2,8 @@
     <div class="easyui-layout bod"
         style="width:auto; background-color:'#e1edf2';width: calc(100vw);min-height: calc(83vh);">
 
-        <div data-options="region:'east',split:true,title:'सूची',iconCls:'icon-help'"
-            style="width:calc(42.08vw);background-color: rgb(236, 242, 249);">
+        <div data-options="region:'east',collapsed: true,split:true,title:'सूची',iconCls:'icon-help'"
+            style="width:30%;background-color: rgb(236, 242, 249);">
             <div id="div_filter_frmsourcelevel" style="margin: 3px 0 3px 0;">
                 <form onsubmit="doListSearch(event)">
                     <div class="row">
@@ -45,7 +45,7 @@
             <div>
 
                 <form id="landTypeFrm" method="post" onsubmit="submitForm(event)" action="{{url}}/define">
-                    <input type="hidden" id="landTypeId" name="landTypeId" value="" data-id="true">
+                 
 
                     <div id="ext-gen13" class="x-panel-bwrap">
                         <div id="ext-gen16" class="x-panel-mc">
@@ -60,10 +60,10 @@
 
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("करदाता नम्बर:")}}
+                                            class="x-form-item-label" >{{gs.wds("करदाता नम्बर")}}
                                         </label>
                                         <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                            <input type="text" id="taxPayerId" name="taxPayerId"
                                                 class="x-form-text x-form-field" />
                                         </div>                                       
                                     </div>
@@ -85,7 +85,7 @@
                                     <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("पछिल्लो व्यक्तिगत करदाता नंबर:")}}</label>
+                                            class="x-form-item-label" >{{gs.wds("पछिल्लो व्यक्तिगत करदाता नंबर")}}</label>
                                         <div class="x-form-element" style="padding-left: 80px;">
                                             <input type="text" id="landTypeNameEn" name="landTypeNameEn"
                                                 class="x-form-text x-form-field" required /> 
@@ -98,8 +98,7 @@
                             </div>
 
 
-
-                            <fieldset [style]="'width:'+ gs.getFrameWidth('45')+'px'"
+                            <fieldset [style]="'width:'+ gs.getFrameWidth('85')+'px'"
                                 class=" x-fieldset x-form-label-left" id="ext-comp-1008">
                                 <legend style="-moz-user-select: none;" id="ext-gen31"
                                     class="x-fieldset-header x-unselectable">
@@ -107,227 +106,243 @@
                                     </span>
                                 </legend>
                                 <input type="hidden" id="taxpayertype" name="taxpayertype">
+                               
                                 <div id="ext-gen32" class="x-fieldset-bwrap">
-                                    <div [style]="'height: auto; width:'+gs.getFrameWidth('45')+'px;'" id="ext-gen33"
+                                    <div [style]="'height: auto; width:'+gs.getFrameWidth('85')+'px;'" id="ext-gen33"
                                         class="x-fieldset-body">
                                         <!-- Frame _ Code Block End ================-->
-
+                                    <div class="row">
+                                        <div class="col-md-4">
                                         <!-- Textbox -->
 
                                         <div class="x-form-item">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label style="overflow:hidden;"
-                                                [style]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("रास्ट्रिय परिचय पत्र नंबर")}}
-                                            </label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="x-form-element" style="padding-left: 80px;">
-                                                        <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                            class="x-form-text x-form-field" required /> &nbsp;<span
-                                                            class="red-required">*</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                         
-                                            <div class="x-form-clear-left"></div>
-                                        </div>
-                                        <!-- End Textbox -->
-
-                                         <!-- Textbox -->
-
-                                         <div class="x-form-item">
-                                             <div class="row">
-                                                 <div class="col-md-3">
-                                                    <label style="overflow:hidden;"
+                                            <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("भ्याट/पान नंबर")}}
+                                                class="x-form-item-label" >{{gs.wds("रास्ट्रिय परिचय पत्र नंबर")}}
                                             </label>
-                                                 </div>
-                                                 <div class="col-md-9">
-                                                    <div class="x-form-element" style="padding-left: 80px;">
-                                                        <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                            class="x-form-text x-form-field" required /> &nbsp;<span
-                                                            class="red-required">*</span>
-                                                    </div>
-                                                 </div>
-                                             </div>
-                                            
-                                            
-                                            <div class="x-form-clear-left"></div>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="nationaIdCardNo" name="nationaIdCardNo"
+                                                    class="x-form-text x-form-field" required /> &nbsp;<span
+                                                    class="red-required">*</span>
+                                            </div>
                                         </div>
                                         <!-- End Textbox -->
+                                        </div>
 
+                                        <div class="col-md-4">
+                                    <!-- Textbox -->
+
+                                        <div class="x-form-item" style="margin-left: -100px !important;">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" >{{gs.wds("भ्याट/पान नंबर")}}
+                                            </label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="vatpan" name="vatpan"
+                                                    class="x-form-text x-form-field" required /> &nbsp;<span
+                                                    class="red-required">*</span>
+                                            </div>
+                                        </div>
+                                        <!-- End Textbox -->
+                                        </div>
+
+                                        <div class="col-md-4">
                                         <!-- Textbox -->
 
-                                        <div class="x-form-item">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label style="overflow:hidden;"
-                                                [style]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("पुरानो करदाता नंबर")}}
+                                        <div class="x-form-item" style="margin-left: -210px !important;">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" >{{gs.wds("पुरानो करदाता नंबर")}}
                                             </label>
-                                                </div>  
-                                                
-                                                <div class="col-md-9">
-                                                    <div class="x-form-element" style="padding-left: 80px;">
-                                                        <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                            class="x-form-text x-form-field" required /> &nbsp;<span
-                                                            class="red-required">*</span>
-                                                    </div>
-                                                </div>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                    class="x-form-text x-form-field" required /> &nbsp;<span
+                                                    class="red-required">*</span>
                                             </div>
-                                            
-                                           
-                                            <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- End Textbox -->
+                                        </div>
+                                    </div>
 
                                     </div>
                                 </div>
                             </fieldset>
 
-                            <fieldset [style]="'width:'+ gs.getFrameWidth('45')+'px'"
+                            <fieldset [style]="'width:'+ gs.getFrameWidth('85')+'px'"
                                 class=" x-fieldset x-form-label-left" id="ext-comp-1008">
                                 <legend style="-moz-user-select: none;" id="ext-gen31"
                                     class="x-fieldset-header x-unselectable">
                                     <span id="ext-gen35" class="x-fieldset-header-text">{{gs.wds("")}}
                                     </span>
                                 </legend>
-                                <input type="hidden" id="landTypeId" name="landTypeId" value="" data-id="true">
+                              
                                 <div id="ext-gen32" class="x-fieldset-bwrap">
-                                    <div [style]="'height: auto; width:'+gs.getFrameWidth('45')+'px;'" id="ext-gen33"
+                                    <div [style]="'height: auto; width:'+gs.getFrameWidth('85')+'px;'" id="ext-gen33"
                                         class="x-fieldset-body">
                                         <!-- Frame _ Code Block End ================-->
 
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                            <!-- Textbox -->
+    
+                                            <div class="x-form-item">
+                                                <label style="overflow:hidden;"
+                                                    [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                    class="x-form-item-label" >{{gs.wds("First Name [NP]")}}
+                                                </label>
+                                                <div class="x-form-element" style="padding-left: 80px;">
+                                                    <input type="text" id="taxPayerFirstNameNp" name="taxPayerFirstNameNp"
+                                                        class="x-form-text x-form-field" required /> &nbsp;<span
+                                                        class="red-required">*</span>
+                                                </div>
+                                            </div>
+                                            <!-- End Textbox -->
+                                            </div>
+    
+                                            <div class="col-md-4">
                                         <!-- Textbox -->
-
-                                        <div class="x-form-item">
-                                            <label style="overflow:hidden;"
-                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("First Name")}}
-                                            </label>
-                                            <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                    class="x-form-text x-form-field" required /> &nbsp;<span
-                                                    class="red-required">*</span>
+    
+                                            <div class="x-form-item" style="margin-left: -100px !important;">
+                                                <label style="overflow:hidden;"
+                                                    [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                    class="x-form-item-label" >{{gs.wds("Last Name [NP]")}}
+                                                </label>
+                                                <div class="x-form-element" style="padding-left: 80px;">
+                                                    <input type="text" id="taxPayerLastNameNp" name="taxPayerLastNameNp"
+                                                        class="x-form-text x-form-field" required /> &nbsp;<span
+                                                        class="red-required">*</span>
+                                                </div>
                                             </div>
-                                            <div class="x-form-clear-left"></div>
-                                        </div>
-                                        <!-- End Textbox -->
-
-                                         <!-- Textbox -->
-
-                                         <div class="x-form-item">
-                                            <label style="overflow:hidden;"
-                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("Middle Name")}}
-                                            </label>
-                                            <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                    class="x-form-text x-form-field" required /> &nbsp;<span
-                                                    class="red-required">*</span>
+                                            <!-- End Textbox -->
                                             </div>
-                                            <div class="x-form-clear-left"></div>
-                                        </div>
-                                        <!-- End Textbox -->
-
-                                        <!-- Textbox -->
-
-                                        <div class="x-form-item">
-                                            <label style="overflow:hidden;"
-                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("Last Name")}}
-                                            </label>
-                                            <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                    class="x-form-text x-form-field" required /> &nbsp;<span
-                                                    class="red-required">*</span>
+    
+                                            <div class="col-md-4">
+                                            <!-- Textbox -->
+    
+                                            <div class="x-form-item" style="margin-left: -210px;">
+                                                <label style="overflow:hidden;"
+                                                    [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                    class="x-form-item-label" >{{gs.wds("First Name[EN]")}}
+                                                </label>
+                                                <div class="x-form-element" style="padding-left: 80px;">
+                                                    <input type="text" id="taxPayerFirstNameEn" name="taxPayerFirstNameEn"
+                                                        class="x-form-text x-form-field"/>
+                                                </div>
                                             </div>
-                                            <div class="x-form-clear-left"></div>
-                                        </div>
-                                        <!-- End Textbox -->
-
-                                        <!-- Textbox -->
-
-                                        <div class="x-form-item">
-                                            <label style="overflow:hidden;"
-                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("DOB")}}
-                                            </label>
-                                            <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                    class="x-form-text x-form-field" required /> &nbsp;<span
-                                                    class="red-required">*</span>
+                                            <!-- End Textbox -->
                                             </div>
-                                            <div class="x-form-clear-left"></div>
                                         </div>
-                                        <!-- End Textbox -->
 
-                                        <!-- Combobox Start-->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <!-- Textbox -->
+    
+                                            <div class="x-form-item">
+                                                <label style="overflow:hidden;"
+                                                    [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                    class="x-form-item-label" >{{gs.wds("Last Name[EN]")}}
+                                                </label>
+                                                <div class="x-form-element" style="padding-left: 80px;">
+                                                    <input type="text" id="taxPayerLastNameEn" name="taxPayerLastNameEn"
+                                                        class="x-form-text x-form-field" />
+                                                </div>
+                                            </div>
+                                            <!-- End Textbox -->
+                                            </div>
+    
+                                            <div class="col-md-4">
+                                                 <!-- Textbox -->
+    
+                                            <div class="x-form-item" style="margin-left: -100px;">
+                                                <label style="overflow:hidden;"
+                                                    [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                    class="x-form-item-label" >{{gs.wds("DOB")}}
+                                                </label>
+                                                <div class="x-form-element" style="padding-left: 80px;">
+                                                    <input type="text" id="dateOfBirth" name="dateOfBirth"
+                                                        class="x-form-text x-form-field" required /> &nbsp;<span
+                                                        class="red-required">*</span>
+                                                </div>
+                                            </div>
+                                            <!-- End Textbox -->
+                                            </div>
+    
+                                            <div class="col-md-4">
+                                                    <!-- Combobox Start-->
 
-                                        <div class="x-form-item">
+                                        <div class="x-form-item" style="margin-left: -210px;">
                                             <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label">{{gs.wds("Gender")}}</label>
                                             <div class="x-form-element" style="padding-left: 80px;">
-                                                <select id="approved" name="approved" class="x-form-text x-form-field">
-                                                    <option value="0">No</option>
-                                                    <option value="1" selected="selected">Yes</option>
+                                                <select id="taxPayerGender" name="taxPayerGender" class="x-form-text x-form-field">
+                                                    <option value="" selected="selected" disabled>........</option>
+                                                    <option value="0">Male</option>
+                                                    <option value="1" >Female</option>
                                                 </select> &nbsp;<span class="red-required">*</span>
                                             </div>
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- Combobox End-->
-
-                                        <!-- Combobox Start-->
-
-                                        <div class="x-form-item">
-                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label">{{gs.wds("Marital Status")}}</label>
-                                            <div class="x-form-element" style="padding-left: 80px;">
-                                                <select id="approved" name="approved" class="x-form-text x-form-field">
-                                                    <option value="0">No</option>
-                                                    <option value="1" selected="selected">Yes</option>
-                                                </select> &nbsp;<span class="red-required">*</span>
                                             </div>
-                                            <div class="x-form-clear-left"></div>
                                         </div>
-                                        <!-- Combobox End-->
 
+                                        <div class="row">
+                                            <div class="col-md-4">
                                             <!-- Combobox Start-->
 
-                                            <div class="x-form-item">
+                                               <div class="x-form-item">
                                                 <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                    class="x-form-item-label">{{gs.wds("राष्ट्रियता")}}</label>
+                                                    class="x-form-item-label">{{gs.wds("Marital Status")}}</label>
                                                 <div class="x-form-element" style="padding-left: 80px;">
-                                                    <select id="approved" name="approved" class="x-form-text x-form-field">
-                                                        <option value="0">No</option>
-                                                        <option value="1" selected="selected">Yes</option>
+                                                    <select id="maritalStatus" name="maritalStatus" class="x-form-text x-form-field">
+                                                        <option value="" selected="selected" disabled>........</option>
+                                                        <option value="1">Unmarried/Single</option>
+                                                        <option value="1">Married</option>
+                                                        <option value="1">Divorced</option>
+                                                        <option value="1">Widowed</option>
                                                     </select> &nbsp;<span class="red-required">*</span>
                                                 </div>
                                                 <div class="x-form-clear-left"></div>
                                             </div>
                                             <!-- Combobox End-->
-
-                                            
-                                            <!-- Combobox Start-->
-
-                                            <div class="x-form-item">
-                                                <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                    class="x-form-item-label">{{gs.wds("पेशा")}}</label>
-                                                <div class="x-form-element" style="padding-left: 80px;">
-                                                    <select id="approved" name="approved" class="x-form-text x-form-field">
-                                                        <option value="0">No</option>
-                                                        <option value="1" selected="selected">Yes</option>
-                                                    </select> &nbsp;<span class="red-required">*</span>
-                                                </div>
-                                                <div class="x-form-clear-left"></div>
                                             </div>
-                                            <!-- Combobox End-->
     
+                                            <div class="col-md-4">
+                                                 <!-- Combobox Start-->
 
+                                          <div class="x-form-item" style="margin-left: -100px;">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("Nationality")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="nationality" name="nationality" class="x-form-text x-form-field">
+                                                    <option value="1" selected="selected" disabled>Nepalese</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+                                            </div>
+    
+                                            <div class="col-md-4">
+                                            <!-- Combobox Start-->
+
+                                            <div class="x-form-item" style="margin-left: -210px;">
+                                                <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                    class="x-form-item-label">{{gs.wds("Profession")}}</label>
+                                                <div class="x-form-element" style="padding-left: 80px;">
+                                                    <select id="profession" name="profession" class="x-form-text x-form-field">
+                                                        <option value="0">No</option>
+                                                        <option value="1" selected="selected">Yes</option>
+                                                    </select> &nbsp;<span class="red-required">*</span>
+                                                </div>
+                                                <div class="x-form-clear-left"></div>
+                                            </div>
+                                            <!-- Combobox End-->
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
                                         <!-- Combobox Start-->
 
                                         <div class="x-form-item">
@@ -343,12 +358,12 @@
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- Combobox End-->
-
-
-
+                                            </div>
+    
+                                            <div class="col-md-4">
                                         <!-- Combobox Start-->
 
-                                        <div class="x-form-item">
+                                        <div class="x-form-item" style="margin-left: -100px;">
                                             <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                                 class="x-form-item-label">{{gs.wds("Disabled")}}
                                             </label>
@@ -361,268 +376,322 @@
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- Combobox End-->
+                                            </div>
+    
+                                            <div class="col-md-4">
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
                             </fieldset>
 
-                            <fieldset [style]="'width:'+ gs.getFrameWidth('45')+'px'"
+                            <fieldset [style]="'width:'+ gs.getFrameWidth('85')+'px'"
                             class=" x-fieldset x-form-label-left" id="ext-comp-1008">
                             <legend style="-moz-user-select: none;" id="ext-gen31"
                                 class="x-fieldset-header x-unselectable">
                                 <span id="ext-gen35" class="x-fieldset-header-text">{{gs.wds("")}}
                                 </span>
                             </legend>
-                            <input type="hidden" id="landTypeId" name="landTypeId" value="" data-id="true">
                             <div id="ext-gen32" class="x-fieldset-bwrap">
-                                <div [style]="'height: auto; width:'+gs.getFrameWidth('45')+'px;'" id="ext-gen33"
+                                <div [style]="'height: auto; width:'+gs.getFrameWidth('85')+'px;'" id="ext-gen33"
                                     class="x-fieldset-body">
                                     <!-- Frame _ Code Block End ================-->
 
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <!-- Textbox -->
+
+                                        <div class="x-form-item">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" >{{gs.wds("नागरिकता नंबर")}}
+                                            </label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="CitizenshipNo" name="CitizenshipNo"
+                                                    class="x-form-text x-form-field" required /> &nbsp;<span
+                                                    class="red-required">*</span>
+                                            </div>
+                                        </div>
+                                        <!-- End Textbox -->
+                                        </div>
+
+                                        <div class="col-md-4">
+                                         <!-- Combobox Start-->
+
+                                         <div class="x-form-item" style="margin-left: -100px;">
+                                            <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label">{{gs.wds("जारिगर्ने जिल्ला")}}</label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <select id="IssuingDistrict" name="IssuingDistrict" class="x-form-text x-form-field">
+                                                    <option value="0">No</option>
+                                                    <option value="1" selected="selected">Yes</option>
+                                                </select> &nbsp;<span class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- Combobox End-->
+                                        </div>
+
+                                        <div class="col-md-4">
+                                        <!-- Textbox -->
+
+                                        <div class="x-form-item" style="margin-left: -210px !important;">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" >{{gs.wds("कार्यालय")}}
+                                            </label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="IssuingOffice" name="IssuingOffice"
+                                                    class="x-form-text x-form-field" required /> &nbsp;<span
+                                                    class="red-required">*</span>
+                                            </div>
+                                        </div>
+                                        <!-- End Textbox -->
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <!-- Textbox -->
+
+                                        <div class="x-form-item">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" >{{gs.wds("बुबाको नाम")}}
+                                            </label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="fatherName" name="fatherName"
+                                                    class="x-form-text x-form-field" required /> &nbsp;<span
+                                                    class="red-required">*</span>
+                                            </div>
+                                        </div>
+                                        <!-- End Textbox -->
+                                        </div>
+
+                                        <div class="col-md-4">
+                                    <!-- Textbox -->
+
+                                    <div class="x-form-item" style="margin-left: -100px;">
+                                        <label style="overflow:hidden;"
+                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                            class="x-form-item-label" >{{gs.wds("आमाको नाम")}}
+                                        </label>
+                                        <div class="x-form-element" style="padding-left: 80px;">
+                                            <input type="text" id="motherName" name="motherName"
+                                                class="x-form-text x-form-field" required /> &nbsp;<span
+                                                class="red-required">*</span>
+                                        </div>
+                                    </div>
+                                    <!-- End Textbox -->
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <!-- Textbox -->
+
+                                    <div class="x-form-item" style="margin-left: -210px;">
+                                        <label style="overflow:hidden;"
+                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                            class="x-form-item-label" >{{gs.wds("श्रीमान/श्रीमती को नाम")}}
+                                        </label>
+                                        <div class="x-form-element" style="padding-left: 80px;">
+                                            <input type="text" id="spouseName" name="spouseName"
+                                                class="x-form-text x-form-field" required /> &nbsp;<span
+                                                class="red-required">*</span>
+                                        </div>
+                                    </div>
+                                    <!-- End Textbox -->
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
                                      <!-- Textbox -->
 
-                                     <div class="x-form-item">
+                                    <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("नागरिकता नंबर")}}
+                                            class="x-form-item-label" >{{gs.wds("बाजेको नाम")}}
                                         </label>
                                         <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                class="x-form-text x-form-field" style="width: 202px;" /> &nbsp;<span
+                                            <input type="text" id="grandFatherName" name="grandFatherName"
+                                                class="x-form-text x-form-field" required /> &nbsp;<span
                                                 class="red-required">*</span>
                                         </div>
-                                        <div class="x-form-clear-left"></div>
                                     </div>
                                     <!-- End Textbox -->
-
-                                    <!-- Combobox Start-->
-
-                                    <div class="x-form-item">
-                                        <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label">{{gs.wds("जारिगर्ने जिल्ला")}}</label>
-                                        <div class="x-form-element" style="padding-left: 80px;">
-                                            <select id="approved" name="approved" class="x-form-text x-form-field">
-                                                <option value="0">No</option>
-                                                <option value="1" selected="selected">Yes</option>
-                                            </select> &nbsp;<span class="red-required">*</span>
                                         </div>
-                                        <div class="x-form-clear-left"></div>
-                                    </div>
-                                    <!-- Combobox End-->
 
+                                        <div class="col-md-4">
+                                <!-- Textbox -->
+
+                                    <div class="x-form-item" style="margin-left: -100px;">
+                                        <label style="overflow:hidden;"
+                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                            class="x-form-item-label" >{{gs.wds("बजईको नाम")}}
+                                        </label>
+                                        <div class="x-form-element" style="padding-left: 80px;">
+                                            <input type="text" id="grandMotherName" name="grandMotherName"
+                                                class="x-form-text x-form-field" required /> &nbsp;<span
+                                                class="red-required">*</span>
+                                        </div>
+                                    </div>
+                                    <!-- End Textbox -->
+                                        </div>
+
+                                    <div class="col-md-4">
                                     <!-- Textbox -->
 
-                                    <div class="x-form-item">
+                                    <div class="x-form-item" style="margin-left: -210px;">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("कार्यालय")}}
+                                            class="x-form-item-label" >{{gs.wds("सासु/ससुराको नाम")}}
                                         </label>
                                         <div class="x-form-element" style="padding-left: 80px;">
                                             <input type="text" id="landTypeNameEn" name="landTypeNameEn"
                                                 class="x-form-text x-form-field" required /> &nbsp;<span
                                                 class="red-required">*</span>
                                         </div>
-                                        <div class="x-form-clear-left"></div>
                                     </div>
                                     <!-- End Textbox -->
-
-                                    <!-- Textbox -->
-
-                                    <div class="x-form-item">
-                                        <label style="overflow:hidden;"
-                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("बुबाको नाम")}}
-                                        </label>
-                                        <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                class="x-form-text x-form-field" required /> &nbsp;<span
-                                                class="red-required">*</span>
                                         </div>
-                                        <div class="x-form-clear-left"></div>
                                     </div>
-                                    <!-- End Textbox -->
-
-                                     <!-- Textbox -->
-
-                                     <div class="x-form-item">
-                                        <label style="overflow:hidden;"
-                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("आमाको नाम")}}
-                                        </label>
-                                        <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                class="x-form-text x-form-field" required /> &nbsp;<span
-                                                class="red-required">*</span>
-                                        </div>
-                                        <div class="x-form-clear-left"></div>
-                                    </div>
-                                    <!-- End Textbox -->
-
-                                    <!-- Textbox -->
-
-                                    <div class="x-form-item">
-                                        <label style="overflow:hidden;"
-                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("श्रीमान/श्रीमती को नाम")}}
-                                        </label>
-                                        <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                class="x-form-text x-form-field" required /> &nbsp;<span
-                                                class="red-required">*</span>
-                                        </div>
-                                        <div class="x-form-clear-left"></div>
-                                    </div>
-                                    <!-- End Textbox -->
-
-                                     <!-- Textbox -->
-
-                                     <div class="x-form-item">
-                                        <label style="overflow:hidden;"
-                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("बाजेको नाम")}}
-                                        </label>
-                                        <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                class="x-form-text x-form-field" required /> &nbsp;<span
-                                                class="red-required">*</span>
-                                        </div>
-                                        <div class="x-form-clear-left"></div>
-                                    </div>
-                                    <!-- End Textbox -->
-
-                                    <!-- Textbox -->
-
-                                    <div class="x-form-item">
-                                        <label style="overflow:hidden;"
-                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("बजईको नाम")}}
-                                        </label>
-                                        <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                class="x-form-text x-form-field" required /> &nbsp;<span
-                                                class="red-required">*</span>
-                                        </div>
-                                        <div class="x-form-clear-left"></div>
-                                    </div>
-                                    <!-- End Textbox -->
-
-                                    <!-- Textbox -->
-
-                                    <div class="x-form-item">
-                                        <label style="overflow:hidden;"
-                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("सासु/ससुराको नाम")}}
-                                        </label>
-                                        <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                class="x-form-text x-form-field" required /> &nbsp;<span
-                                                class="red-required">*</span>
-                                        </div>
-                                        <div class="x-form-clear-left"></div>
-                                    </div>
-                                    <!-- End Textbox -->
-
-
                                 </div>
                             </div>
                         </fieldset>
 
-                        <fieldset [style]="'width:'+ gs.getFrameWidth('45')+'px'"
+                       
+
+                        <fieldset [style]="'width:'+ gs.getFrameWidth('85')+'px'"
                                 class=" x-fieldset x-form-label-left" id="ext-comp-1008">
                                 <legend style="-moz-user-select: none;" id="ext-gen31"
                                     class="x-fieldset-header x-unselectable">
                                     <span id="ext-gen35" class="x-fieldset-header-text">{{gs.wds("स्थाई ठेगाना")}}
                                     </span>
                                 </legend>
-                                <input type="hidden" id="taxpayertype" name="taxpayertype" value="1" data-id="true">
+                                <input type="hidden" id="taxpayertype" name="taxpayertype" value="1">
                                 <div id="ext-gen32" class="x-fieldset-bwrap">
-                                    <div [style]="'height: auto; width:'+gs.getFrameWidth('45')+'px;'" id="ext-gen33"
+                                    <div [style]="'height: auto; width:'+gs.getFrameWidth('85')+'px;'" id="ext-gen33"
                                         class="x-fieldset-body">
                                         <!-- Frame _ Code Block End ================-->
 
+                                        <div class="row">
+                                            <div class="col-md-4">
                                     <!-- Combobox Start-->
 
                                     <div class="x-form-item">
                                         <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label">{{gs.wds("जिल्ला")}}</label>
                                         <div class="x-form-element" style="padding-left: 80px;">
-                                            <select id="approved" name="approved" class="x-form-text x-form-field">
+                                            <select id="perDistrictId" name="perDistrictId" class="x-form-text x-form-field">
                                                 <option value="0">No</option>
-                                                <option value="1" selected="selected">Yes</option>
+                                                <option value="" selected="selected" disabled>........</option>
                                             </select> &nbsp;<span class="red-required">*</span>
                                         </div>
                                         <div class="x-form-clear-left"></div>
                                     </div>
                                     <!-- Combobox End-->
-
+                                            </div>
+    
+                                            <div class="col-md-4">
+                                                
                                   <!-- Combobox Start-->
 
-                                    <div class="x-form-item">
+                                    <div class="x-form-item" style="margin-left: -100px;">
                                         <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label">{{gs.wds("पालिका")}}</label>
                                         <div class="x-form-element" style="padding-left: 80px;">
-                                            <select id="approved" name="approved" class="x-form-text x-form-field">
+                                            <select id="perLocalLevelId" name="perLocalLevelId" class="x-form-text x-form-field">
                                                 <option value="0">No</option>
-                                                <option value="1" selected="selected">Yes</option>
+                                                <option value="" selected="selected" disabled>........</option>
                                             </select> &nbsp;<span class="red-required">*</span>
                                         </div>
                                         <div class="x-form-clear-left"></div>
                                     </div>
                                     <!-- Combobox End-->
-
+                                            </div>
+    
+                                        <div class="col-md-4">                                            
                                     <!-- Combobox Start-->
 
-                                    <div class="x-form-item">
+                                    <div class="x-form-item" style="margin-left: -210px;">
                                         <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                             class="x-form-item-label">{{gs.wds("वडा नंबर")}}</label>
                                         <div class="x-form-element" style="padding-left: 80px;">
-                                            <select id="approved" name="approved" class="x-form-text x-form-field">
+                                            <select id="perWardNo" name="perWardNo" class="x-form-text x-form-field">
                                                 <option value="0">No</option>
-                                                <option value="1" selected="selected">Yes</option>
+                                                <option value="" disabled selected="selected">........</option>
                                             </select> &nbsp;<span class="red-required">*</span>
                                         </div>
                                         <div class="x-form-clear-left"></div>
                                     </div>
                                     <!-- Combobox End-->
+                                            </div>
+                                        </div>
+                                    
 
-                                        <!-- Textbox -->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                     <!-- Textbox -->
 
                                         <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("टोल")}}
+                                                class="x-form-item-label" >{{gs.wds("टोल")}}
                                             </label>
                                             <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                <input type="text" id="perTole" name="perTole"
                                                     class="x-form-text x-form-field" required /> &nbsp;<span
                                                     class="red-required">*</span>
                                             </div>
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- End Textbox -->
+                                            </div>
+                                            <div class="col-md-4">
+                                        <!-- Textbox -->
 
+                                         <div class="x-form-item" style="margin-left: -100px;">
+                                            <label style="overflow:hidden;"
+                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                                class="x-form-item-label" >{{gs.wds("मार्ग")}}
+                                            </label>
+                                            <div class="x-form-element" style="padding-left: 80px;">
+                                                <input type="text" id="perStreet" name="perStreet"
+                                                    class="x-form-text x-form-field" required /> &nbsp;<span
+                                                    class="red-required">*</span>
+                                            </div>
+                                            <div class="x-form-clear-left"></div>
+                                        </div>
+                                        <!-- End Textbox -->
+                                            </div>
+                                            <div class="col-md-4">
                                          <!-- Textbox -->
 
-                                         <div class="x-form-item">
+                                        <div class="x-form-item" style="margin-left: -210px;">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("मार्ग")}}
+                                                class="x-form-item-label" >{{gs.wds("घर नंबर")}}
                                             </label>
                                             <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                <input type="text" id="perHouserNo" name="perHouserNo"
                                                     class="x-form-text x-form-field" required /> &nbsp;<span
                                                     class="red-required">*</span>
                                             </div>
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- End Textbox -->
+                                            </div>
+                                        </div>
 
+                                        <div class="row">
+                                            <div class="col-md-4">
                                         <!-- Textbox -->
 
                                         <div class="x-form-item">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("घर नंबर")}}
+                                                class="x-form-item-label" >{{gs.wds("फोन नंबर")}}
                                             </label>
                                             <div class="x-form-element" style="padding-left: 80px;">
                                                 <input type="text" id="landTypeNameEn" name="landTypeNameEn"
@@ -633,185 +702,198 @@
                                         </div>
                                         <!-- End Textbox -->
 
+                                            </div>
+
+                                            <div class="col-md-4">
                                         <!-- Textbox -->
 
-                                        <div class="x-form-item">
+                                        <div class="x-form-item" style="margin-left: -100px;">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("फोन नंबर")}}
+                                                class="x-form-item-label" >{{gs.wds("मोबाइल नंबर")}}
                                             </label>
                                             <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                <input type="text" id="mobileNo" name="mobileNo"
                                                     class="x-form-text x-form-field" required /> &nbsp;<span
                                                     class="red-required">*</span>
                                             </div>
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- End Textbox -->
+                                            </div>
 
+                                        <div class="col-md-4">
                                         <!-- Textbox -->
 
-                                        <div class="x-form-item">
+                                        <div class="x-form-item" style="margin-left: -210px;">
                                             <label style="overflow:hidden;"
                                                 [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("मोबाइल नंबर")}}
+                                                class="x-form-item-label" >{{gs.wds("इमेल")}}
                                             </label>
                                             <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                                <input type="email" id="email" name="email"
                                                     class="x-form-text x-form-field" required /> &nbsp;<span
                                                     class="red-required">*</span>
                                             </div>
                                             <div class="x-form-clear-left"></div>
                                         </div>
                                         <!-- End Textbox -->
-
-                                        <!-- Textbox -->
-
-                                        <div class="x-form-item">
-                                            <label style="overflow:hidden;"
-                                                [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                                class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("इमेल")}}
-                                            </label>
-                                            <div class="x-form-element" style="padding-left: 80px;">
-                                                <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                    class="x-form-text x-form-field" required /> &nbsp;<span
-                                                    class="red-required">*</span>
                                             </div>
-                                            <div class="x-form-clear-left"></div>
                                         </div>
-                                        <!-- End Textbox -->
+
 
                                     </div>
                                 </div>
                             </fieldset>
 
-                            <fieldset [style]="'width:'+ gs.getFrameWidth('45')+'px'"
+                            <fieldset [style]="'width:'+ gs.getFrameWidth('85')+'px'"
                             class=" x-fieldset x-form-label-left" id="ext-comp-1008">
                             <legend style="-moz-user-select: none;" id="ext-gen31"
                                 class="x-fieldset-header x-unselectable">
-                                <span id="ext-gen35" class="x-fieldset-header-text">{{gs.wds("अस्थाई ठेगाना")}}
+                                <span id="ext-gen35" class="x-fieldset-header-text">{{gs.wds("अस्थाई ठेगाना")}} 
+                                   &nbsp; &nbsp; <span>
+                                    &nbsp;
+                                    <input (click)="sameAsPerAddress($event)" type="checkbox" value="Bike" style="float: none !important;">
+                                    <span style="font-size: 11px;"> Same as Permanent Address</span>    
+                                   </span> 
                                 </span>
                             </legend>
-                            <input type="hidden" id="taxpayertype" name="taxpayertype" value="1" data-id="true">
+                       
                             <div id="ext-gen32" class="x-fieldset-bwrap">
-                                <div [style]="'height: auto; width:'+gs.getFrameWidth('45')+'px;'" id="ext-gen33"
+                                <div [style]="'height: auto; width:'+gs.getFrameWidth('85')+'px;'" id="ext-gen33"
                                     class="x-fieldset-body">
                                     <!-- Frame _ Code Block End ================-->
 
+                                    <div class="row">
+                                        <div class="col-md-4">
                                 <!-- Combobox Start-->
 
                                 <div class="x-form-item">
                                     <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                         class="x-form-item-label">{{gs.wds("जिल्ला")}}</label>
                                     <div class="x-form-element" style="padding-left: 80px;">
-                                        <select id="approved" name="approved" class="x-form-text x-form-field">
+                                        <select id="tempDistrictId" name="tempDistrictId" class="x-form-text x-form-field">
                                             <option value="0">No</option>
-                                            <option value="1" selected="selected">Yes</option>
+                                            <option value="" disabled selected="selected">........</option>
                                         </select> &nbsp;<span class="red-required">*</span>
                                     </div>
                                     <div class="x-form-clear-left"></div>
                                 </div>
                                 <!-- Combobox End-->
+                                        </div>
 
+                                        <div class="col-md-4">
+                                            
                               <!-- Combobox Start-->
 
-                                <div class="x-form-item">
+                                <div class="x-form-item" style="margin-left: -100px;">
                                     <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                         class="x-form-item-label">{{gs.wds("पालिका")}}</label>
                                     <div class="x-form-element" style="padding-left: 80px;">
-                                        <select id="approved" name="approved" class="x-form-text x-form-field">
+                                        <select id="tempLocalLevelId" name="tempLocalLevelId" class="x-form-text x-form-field">
                                             <option value="0">No</option>
-                                            <option value="1" selected="selected">Yes</option>
+                                            <option value="" selected="selected" disabled>........</option>
                                         </select> &nbsp;<span class="red-required">*</span>
                                     </div>
                                     <div class="x-form-clear-left"></div>
                                 </div>
                                 <!-- Combobox End-->
+                                        </div>
 
+                                    <div class="col-md-4">                                            
                                 <!-- Combobox Start-->
 
-                                <div class="x-form-item">
+                                <div class="x-form-item" style="margin-left: -210px;">
                                     <label [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
                                         class="x-form-item-label">{{gs.wds("वडा नंबर")}}</label>
                                     <div class="x-form-element" style="padding-left: 80px;">
-                                        <select id="approved" name="approved" class="x-form-text x-form-field">
+                                        <select id="tempWardNo" name="tempWardNo" class="x-form-text x-form-field">
                                             <option value="0">No</option>
-                                            <option value="1" selected="selected">Yes</option>
+                                            <option value="" disabled selected="selected">........</option>
                                         </select> &nbsp;<span class="red-required">*</span>
                                     </div>
                                     <div class="x-form-clear-left"></div>
                                 </div>
                                 <!-- Combobox End-->
+                                        </div>
+                                    </div>
+                                
 
-                                    <!-- Textbox -->
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                 <!-- Textbox -->
 
                                     <div class="x-form-item">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("टोल")}}
+                                            class="x-form-item-label" >{{gs.wds("टोल")}}
                                         </label>
                                         <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                            <input type="text" id="tempTole" name="tempTole"
                                                 class="x-form-text x-form-field" required /> &nbsp;<span
                                                 class="red-required">*</span>
                                         </div>
                                         <div class="x-form-clear-left"></div>
                                     </div>
                                     <!-- End Textbox -->
+                                        </div>
+                                        <div class="col-md-4">
+                                    <!-- Textbox -->
 
+                                     <div class="x-form-item" style="margin-left: -100px;">
+                                        <label style="overflow:hidden;"
+                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
+                                            class="x-form-item-label" >{{gs.wds("मार्ग")}}
+                                        </label>
+                                        <div class="x-form-element" style="padding-left: 80px;">
+                                            <input type="text" id="tempStreet" name="tempStreet"
+                                                class="x-form-text x-form-field" required /> &nbsp;<span
+                                                class="red-required">*</span>
+                                        </div>
+                                        <div class="x-form-clear-left"></div>
+                                    </div>
+                                    <!-- End Textbox -->
+                                        </div>
+                                        <div class="col-md-4">
                                      <!-- Textbox -->
 
-                                     <div class="x-form-item">
+                                    <div class="x-form-item" style="margin-left: -210px;">
                                         <label style="overflow:hidden;"
                                             [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("मार्ग")}}
+                                            class="x-form-item-label" >{{gs.wds("घर नंबर")}}
                                         </label>
                                         <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
+                                            <input type="text" id="tempHouserNo" name="tempHouserNo"
                                                 class="x-form-text x-form-field" required /> &nbsp;<span
                                                 class="red-required">*</span>
                                         </div>
                                         <div class="x-form-clear-left"></div>
                                     </div>
                                     <!-- End Textbox -->
-
-                                    <!-- Textbox -->
-
-                                    <div class="x-form-item">
-                                        <label style="overflow:hidden;"
-                                            [style.width]="'width:'+gs.getFrameWidth('45')+'px;'"
-                                            class="x-form-item-label" title='{{"Code"}}'>{{gs.wds("घर नंबर")}}
-                                        </label>
-                                        <div class="x-form-element" style="padding-left: 80px;">
-                                            <input type="text" id="landTypeNameEn" name="landTypeNameEn"
-                                                class="x-form-text x-form-field" required /> &nbsp;<span
-                                                class="red-required">*</span>
                                         </div>
-                                        <div class="x-form-clear-left"></div>
                                     </div>
-                                    <!-- End Textbox -->
-
                                 </div>
                             </div>
                         </fieldset>
 
+
                         
-                        <fieldset [style]="'width:'+ gs.getFrameWidth('45')+'px'"
+                        <fieldset [style]="'width:'+ gs.getFrameWidth('85')+'px'"
                         class=" x-fieldset x-form-label-left" id="ext-comp-1008">
                         <legend style="-moz-user-select: none;" id="ext-gen31"
                             class="x-fieldset-header x-unselectable">
                             <span id="ext-gen35" class="x-fieldset-header-text">{{gs.wds("पारिवारिक बिबरण")}}
                             </span>
                         </legend>
-                        <input type="hidden" id="taxpayertype" name="taxpayertype" value="1" data-id="true">
+                        
                         <div id="ext-gen32" class="x-fieldset-bwrap">
-                            <div [style]="'height: auto; width:'+gs.getFrameWidth('45')+'px;'" id="ext-gen33"
+                            <div [style]="'height: auto; width:'+gs.getFrameWidth('85')+'px;'" id="ext-gen33"
                                 class="x-fieldset-body">
                                 <!-- Frame _ Code Block End ================-->
 
                                 <input type="hidden" id="fileds" name="fields" value="name,dob,rel,bus,rem">
                                 <input type="hidden" name="fldvls" id="fldvls" value=""> 
-                            <table id="darbandiTable" class="table table-striped table-bordered" width="100%">
+                            <table class="table table-striped table-bordered" [style]="'width:'+ gs.getFrameWidth('64')+'px'">
         
         
                                 <thead style="background-color:#F2F3F4;">
@@ -835,14 +917,14 @@
         
                                         <td>
                                                 <select id="relationId" name="relationId" class="x-form-text x-form-field"  style="width: 115px !important;">
-                                                    <option value="0">No</option>
-                                                    <option value="initialState" selected="selected">........</option>
+                                                    <option value="No">No</option>
+                                                    <option value="" selected="selected">........</option>
                                                 </select>
                                         </td>
                                         <td>
-                                            <select id="profession" name="profession" class="x-form-text x-form-field"  style="width: 115px !important;">
-                                                <option value="0">No</option>
-                                                <option value="initialState" selected="selected">........</option>
+                                            <select id="professions" name="professions" class="x-form-text x-form-field"  style="width: 115px !important;">
+                                                <option value="NO">No</option>
+                                                <option value="" selected="selected" disabled>........</option>
                                             </select>
                                         </td>
                                         <td>
@@ -860,7 +942,7 @@
                                 </tbody>
                             </table>
         
-                            <table id="darbandiTable" class="table table-striped table-bordered" width="100%">
+                            <table id="darbandiTable" class="table table-striped table-bordered" [style]="'width:'+ gs.getFrameWidth('64')+'px'">
         
         
                                 <thead style="background-color:#F2F3F4;">
@@ -906,6 +988,8 @@
                         </div>
                     </div>
                 </form>
+
+                
             </div>
         </div>
     </div>
